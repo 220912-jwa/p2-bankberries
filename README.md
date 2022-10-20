@@ -1,6 +1,6 @@
-#Banking App
+# Banking App
 
-##MVPs
+## MVPs
 --------------
 - User can login
 - User can view account balances
@@ -8,7 +8,7 @@
  -User can conduct transfers between accounts they own
 - User can fill out a loan application
 ----------
-##Stretch Goals
+## Stretch Goals
 - New user can register for an account
 - Manager can approve or deny loan applications
 - Users can see current loan history

@@ -1,5 +1,5 @@
 # Banking App
-The banking application is a full-stack web application that allows users to view their account balances as well as apply for loans. The user will be able to view their checking and savings account transaction histories as well as their pending loan applications.
+The Bankberry credit union application is a full-stack banking application that provides its users the ability check not just their account balances, but also a detailed history of their transactions. Users can transfer funds between accounts as well as apply for loan applications by selecting a loan amount and a term. Upon completion of loan applications users will be able to view or delete their pending applications.
 
 ## MVPs
 

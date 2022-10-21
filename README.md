@@ -1,4 +1,5 @@
 # Banking App
+The banking application is a full-stack web application that allows users to view their account balances as well as apply for loans. The user will be able to view their checking and savings account transaction histories as well as their pending loan applications.
 
 ## MVPs
 

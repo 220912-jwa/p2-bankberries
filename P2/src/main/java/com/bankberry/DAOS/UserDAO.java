@@ -1,0 +1,45 @@
+package com.bankberry.DAOS;
+
+import com.bankberry.entities.User;
+import com.bankberry.utils.ConnectionUtil;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class UserDAO {
+
+
+    public User getUserByAccessNumber(int accessNumber){
+
+        try(Connection connection = ConnectionUtil.createConnection()){
+            String sql = "Select * from project2.users where access_number = ?";
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setInt(1,accessNumber);
+            ResultSet rs = ps.executeQuery();
+            if(rs.next()){
+                return new User(
+                        rs.getInt("access_number"),
+                        rs.getString("first_name"),
+                        rs.getString("last_name"),
+                        rs.getString("email"),
+                        rs.getString("pass"),
+                        rs.getInt("check_id"),
+                        rs.getInt("savings_id")
+
+                );
+                }
+
+
+
+        }catch(SQLException e){
+            e.printStackTrace();
+        } return null;
+
+}
+
+
+
+
+}

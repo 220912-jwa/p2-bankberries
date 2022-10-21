@@ -8,12 +8,12 @@ public class User {
    private String pass;
    private int ckId;
    private int svngId;
-   private int loanAppId;
+
 
     public User() {
     }
 
-    public User(int accessNumber, String firstName, String lastName, String email, String pass, int ckId, int svngId, int loanAppId) {
+    public User(int accessNumber, String firstName, String lastName, String email, String pass, int ckId, int svngId) {
         this.accessNumber = accessNumber;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -21,7 +21,7 @@ public class User {
         this.pass = pass;
         this.ckId = ckId;
         this.svngId = svngId;
-        this.loanAppId = loanAppId;
+
     }
 
     public int getAccessNumber() {
@@ -80,13 +80,7 @@ public class User {
         this.svngId = svngId;
     }
 
-    public int getLoanAppId() {
-        return loanAppId;
-    }
 
-    public void setLoanAppId(int loanAppId) {
-        this.loanAppId = loanAppId;
-    }
 
     @Override
     public String toString() {
@@ -98,7 +92,7 @@ public class User {
                 ", pass='" + pass + '\'' +
                 ", ckId=" + ckId +
                 ", svngId=" + svngId +
-                ", loanAppId=" + loanAppId +
+
                 '}';
     }
 }

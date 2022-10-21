@@ -5,13 +5,16 @@ public class SavingsTransactions {
     private String savingsTransDescription;
     private double savingsTransAmount;
 
+    private int savingsAccountId;
+
     public SavingsTransactions() {
     }
 
-    public SavingsTransactions(int savingsTransId, String savingsTransDescription, double savingsTransAmount) {
+    public SavingsTransactions(int savingsTransId, String savingsTransDescription, double savingsTransAmount, int savingsAccountId) {
         this.savingsTransId = savingsTransId;
         this.savingsTransDescription = savingsTransDescription;
         this.savingsTransAmount = savingsTransAmount;
+        this.savingsAccountId = savingsAccountId;
     }
 
     public int getSavingsTransId() {
@@ -44,6 +47,7 @@ public class SavingsTransactions {
                 "savingsTransId=" + savingsTransId +
                 ", savingsTransDescription='" + savingsTransDescription + '\'' +
                 ", savingsTransAmount=" + savingsTransAmount +
+                ", savingsAccountId=" + savingsAccountId +
                 '}';
     }
 }

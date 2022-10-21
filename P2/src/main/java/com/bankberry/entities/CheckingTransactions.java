@@ -4,14 +4,24 @@ public class CheckingTransactions {
     private int ckingTransId;
     private String transDescription;
     private double ckTransAmount;
+    private int checkingAccountId;
+
+    public int getCheckingAccountId() {
+        return checkingAccountId;
+    }
+
+    public void setCheckingAccountId(int checkingAccountId) {
+        this.checkingAccountId = checkingAccountId;
+    }
 
     public CheckingTransactions() {
     }
 
-    public CheckingTransactions(int ckingTransId, String transDescription, double ckTransAmount) {
+    public CheckingTransactions(int ckingTransId, String transDescription, double ckTransAmount, int checkingAccountId) {
         this.ckingTransId = ckingTransId;
         this.transDescription = transDescription;
         this.ckTransAmount = ckTransAmount;
+        this.checkingAccountId = checkingAccountId;
     }
 
     public int getCkingTransId() {
@@ -44,6 +54,7 @@ public class CheckingTransactions {
                 "ckingTransId=" + ckingTransId +
                 ", transDescription='" + transDescription + '\'' +
                 ", ckTransAmount=" + ckTransAmount +
+                ", checkingAccountId=" + checkingAccountId +
                 '}';
     }
 }

@@ -4,14 +4,24 @@ public class LoanApplication {
     private int loanAppId;
     private double loanAmount;
     private int termInMonths;
+    private int user_id;
+
+    public int getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(int user_id) {
+        this.user_id = user_id;
+    }
 
     public LoanApplication() {
     }
 
-    public LoanApplication(int loanAppId, double loanAmount, int termInMonths) {
+    public LoanApplication(int loanAppId, double loanAmount, int termInMonths, int user_id) {
         this.loanAppId = loanAppId;
         this.loanAmount = loanAmount;
         this.termInMonths = termInMonths;
+        this.user_id = user_id;
     }
 
     public int getLoanAppId() {
@@ -44,6 +54,7 @@ public class LoanApplication {
                 "loanAppId=" + loanAppId +
                 ", loanAmount=" + loanAmount +
                 ", termInMonths=" + termInMonths +
+                ", user_id=" + user_id +
                 '}';
     }
 }

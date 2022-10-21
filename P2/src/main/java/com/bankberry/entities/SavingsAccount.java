@@ -3,12 +3,12 @@ package com.bankberry.entities;
 public class SavingsAccount {
     private int savingsAccountNumber;
     private double savingsBalance;
-    private int svngTransId;
 
-    public SavingsAccount(int savingsAccountNumber, double savingsBalance, int svngTransId) {
+
+    public SavingsAccount(int savingsAccountNumber, double savingsBalance) {
         this.savingsAccountNumber = savingsAccountNumber;
         this.savingsBalance = savingsBalance;
-        this.svngTransId = svngTransId;
+
     }
 
     public SavingsAccount() {
@@ -30,20 +30,14 @@ public class SavingsAccount {
         this.savingsBalance = savingsBalance;
     }
 
-    public int getSvngTransId() {
-        return svngTransId;
-    }
 
-    public void setSvngTransId(int svngTransId) {
-        this.svngTransId = svngTransId;
-    }
 
     @Override
     public String toString() {
         return "SavingsAccount{" +
                 "savingsAccountNumber=" + savingsAccountNumber +
                 ", savingsBalance=" + savingsBalance +
-                ", svngTransId=" + svngTransId +
+
                 '}';
     }
 }

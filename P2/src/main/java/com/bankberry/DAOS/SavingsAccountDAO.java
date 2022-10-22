@@ -13,14 +13,14 @@ public class SavingsAccountDAO {
 
     public SavingsAccount getByAccountNumber(int savingsId){
         try(Connection connection = ConnectionUtil.createConnection()){
-            String sql ="select * from project2.savings_account where account_number =?";
+            String sql ="select * from project2.savings_account where savings_account_number =?";
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setInt(1,savingsId);
             ResultSet rs = ps.executeQuery();
             if(rs.next()){
                 return new SavingsAccount(
                         rs.getInt("savings_account_number"),
-                        rs.getDouble("savings_balances")
+                        rs.getDouble("savings_balance")
 
                 );
             }

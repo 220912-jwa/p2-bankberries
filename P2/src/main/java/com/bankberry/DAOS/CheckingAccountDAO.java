@@ -20,7 +20,7 @@ public class CheckingAccountDAO {
             if(rs.next()){
                 return new CheckingAccount(
                 rs.getInt("account_number"),
-                rs.getDouble("checking_balances")
+                rs.getDouble("checking_balance")
 
                 );
             }

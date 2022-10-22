@@ -2,6 +2,7 @@ package com.bankberry;
 
 import com.bankberry.DAOS.*;
 import com.bankberry.controllers.AuthenticationController;
+import com.bankberry.controllers.UserController;
 import com.bankberry.services.AuthenticationService;
 import com.bankberry.services.UserService;
 import io.javalin.Javalin;
@@ -23,7 +24,7 @@ public class AppRunner {
         UserService userService = new UserService(checkingTransactionsDAO,savingsTransactionDAO,checkingAccountDAO,savingsAccountDAO,loanAppDAO);
 
         AuthenticationController authenticationController = new AuthenticationController(authenticationService);
-
+        UserController userController = new UserController(userService);
         Javalin app = Javalin.create(config ->{
             config.enableCorsForAllOrigins();
 
@@ -32,6 +33,30 @@ public class AppRunner {
         app.routes(() -> {
          path("login", ()-> {
              get(authenticationController.userLogin);
+         });
+         path("user/{ID}", ()->{
+
+             path("savingsaccount",()->{
+                 get(userController::getSavingsAccountById);
+
+             });
+             path("checkingaccount",()->{
+
+                 get(userController::getCheckingById);
+             });
+             path("loanapps",()->{
+                 get(userController::getAllLoanAppsById);
+
+             });
+
+
+             path("savings-transactions", ()->{
+
+                 get(userController::getSavingsTransactionsById);
+             });
+             path("checking-transactions", ()->{
+                 get(userController::getCheckingTransactionsById);
+             });
          });
 
 

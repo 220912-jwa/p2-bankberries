@@ -30,4 +30,21 @@ public class SavingsAccountDAO {
         }
         return null;
     }
+    public void updateSavings(int id, double amount){
+        try (Connection connection = ConnectionUtil.createConnection()){
+            String sql = "update project2.savings_account set savings_balance =? where savings_account_number =?";
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setDouble(1,amount);
+            ps.setInt(2, id);
+            ps.execute();
+
+
+
+
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+
+
+    }
 }

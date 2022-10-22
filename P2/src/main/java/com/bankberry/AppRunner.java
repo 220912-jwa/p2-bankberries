@@ -7,8 +7,10 @@ import com.bankberry.services.AuthenticationService;
 import com.bankberry.services.UserService;
 import io.javalin.Javalin;
 
+
 import static io.javalin.apibuilder.ApiBuilder.get;
 import static io.javalin.apibuilder.ApiBuilder.path;
+import static io.javalin.apibuilder.ApiBuilder.post;
 
 public class AppRunner {
     public static void main(String[] args) {
@@ -39,11 +41,18 @@ public class AppRunner {
              path("savingsaccount",()->{
                  get(userController::getSavingsAccountById);
 
+                path("{savingsupdate}",()->{
+                    post(userController::updateSavings);
+                });
+
              });
              path("checkingaccount",()->{
 
                  get(userController::getCheckingById);
-             });
+
+                    path("{update}", () ->{
+                        post(userController::updateChecking);
+                    });});
              path("loanapps",()->{
                  get(userController::getAllLoanAppsById);
 

@@ -31,6 +31,24 @@ public class CheckingAccountDAO {
         return null;
     }
 
+    public void updateChecking(int id, double amount){
+        try (Connection connection = ConnectionUtil.createConnection()){
+            String sql = "update project2.checking_account set checking_balance =? where account_number =?";
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setDouble(1,amount);
+            ps.setInt(2, id);
+            ps.execute();
+
+
+
+
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+
+
+    }
+
 
 
 }

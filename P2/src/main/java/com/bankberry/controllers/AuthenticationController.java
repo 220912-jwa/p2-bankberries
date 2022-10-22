@@ -20,6 +20,10 @@ public class AuthenticationController {
         if(authenticatedUser!= null){
             ctx.status(200);
             ctx.json(authenticatedUser);
+        }else{
+            ctx.status(404);
+            String message ="Incorrect credentials";
+            ctx.json(message);
         }
     };
 }

@@ -13,14 +13,14 @@ public class SavingsAccountDAO {
 
     public SavingsAccount getByAccountNumber(int savingsId){
         try(Connection connection = ConnectionUtil.createConnection()){
-            String sql ="select * from project2.savings_account where account_number =?";
+            String sql ="select * from project2.savings_account where savings_account_number =?";
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setInt(1,savingsId);
             ResultSet rs = ps.executeQuery();
             if(rs.next()){
                 return new SavingsAccount(
                         rs.getInt("savings_account_number"),
-                        rs.getDouble("savings_balances")
+                        rs.getDouble("savings_balance")
 
                 );
             }
@@ -29,5 +29,22 @@ public class SavingsAccountDAO {
             e.printStackTrace();
         }
         return null;
+    }
+    public void updateSavings(int id, double amount){
+        try (Connection connection = ConnectionUtil.createConnection()){
+            String sql = "update project2.savings_account set savings_balance =? where savings_account_number =?";
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setDouble(1,amount);
+            ps.setInt(2, id);
+            ps.execute();
+
+
+
+
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+
+
     }
 }

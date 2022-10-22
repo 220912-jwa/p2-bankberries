@@ -20,7 +20,7 @@ public class CheckingAccountDAO {
             if(rs.next()){
                 return new CheckingAccount(
                 rs.getInt("account_number"),
-                rs.getDouble("checking_balances")
+                rs.getDouble("checking_balance")
 
                 );
             }
@@ -29,6 +29,24 @@ public class CheckingAccountDAO {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public void updateChecking(int id, double amount){
+        try (Connection connection = ConnectionUtil.createConnection()){
+            String sql = "update project2.checking_account set checking_balance =? where account_number =?";
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setDouble(1,amount);
+            ps.setInt(2, id);
+            ps.execute();
+
+
+
+
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+
+
     }
 
 

@@ -44,4 +44,12 @@ public class UserService {
         //use the id for the checking account that is referenced by the foreign key
         return checkingTransactionsDAO.getById(id);
     }
+
+    public void updateChecking(int id, double amount){
+        checkingAccountDAO.updateChecking(id,amount);
+
+    }
+    public void updateSavings(int id, double amount){
+        savingsAccountDAO.updateSavings(id, amount);
+    }
 }

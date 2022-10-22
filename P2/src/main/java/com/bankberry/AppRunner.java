@@ -2,12 +2,15 @@ package com.bankberry;
 
 import com.bankberry.DAOS.*;
 import com.bankberry.controllers.AuthenticationController;
+import com.bankberry.controllers.UserController;
 import com.bankberry.services.AuthenticationService;
 import com.bankberry.services.UserService;
 import io.javalin.Javalin;
 
+
 import static io.javalin.apibuilder.ApiBuilder.get;
 import static io.javalin.apibuilder.ApiBuilder.path;
+import static io.javalin.apibuilder.ApiBuilder.post;
 
 public class AppRunner {
     public static void main(String[] args) {
@@ -23,7 +26,7 @@ public class AppRunner {
         UserService userService = new UserService(checkingTransactionsDAO,savingsTransactionDAO,checkingAccountDAO,savingsAccountDAO,loanAppDAO);
 
         AuthenticationController authenticationController = new AuthenticationController(authenticationService);
-
+        UserController userController = new UserController(userService);
         Javalin app = Javalin.create(config ->{
             config.enableCorsForAllOrigins();
 
@@ -32,6 +35,37 @@ public class AppRunner {
         app.routes(() -> {
          path("login", ()-> {
              get(authenticationController.userLogin);
+         });
+         path("user/{ID}", ()->{
+
+             path("savingsaccount",()->{
+                 get(userController::getSavingsAccountById);
+
+                path("{savingsupdate}",()->{
+                    post(userController::updateSavings);
+                });
+
+             });
+             path("checkingaccount",()->{
+
+                 get(userController::getCheckingById);
+
+                    path("{update}", () ->{
+                        post(userController::updateChecking);
+                    });});
+             path("loanapps",()->{
+                 get(userController::getAllLoanAppsById);
+
+             });
+
+
+             path("savings-transactions", ()->{
+
+                 get(userController::getSavingsTransactionsById);
+             });
+             path("checking-transactions", ()->{
+                 get(userController::getCheckingTransactionsById);
+             });
          });
 
 

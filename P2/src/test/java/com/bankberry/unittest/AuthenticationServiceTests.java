@@ -11,7 +11,9 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import static org.mockito.Mockito.when;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.*;
 
 
 @ExtendWith(MockitoExtension.class)
@@ -25,6 +27,9 @@ public class AuthenticationServiceTests {
 
     @Mock
     private User mockUser;
+
+    @Mock
+    private User mockUser2;
 
     @BeforeAll
     public static void setup() {
@@ -43,6 +48,16 @@ public class AuthenticationServiceTests {
                 2,
                 3
         );
+
+        mockUser2 = new User(
+                1,
+                "Nick",
+                "Kuhaneck",
+                "example@yahoo.com",
+                "pass123",
+                1,
+                2
+        );
     }
 
     @Test
@@ -50,5 +65,14 @@ public class AuthenticationServiceTests {
         when(mockUserDAO.getByEmail(mockUser.getEmail())).thenReturn(mockUser);
         User nu = mockAuthenticationService.userLogin(mockUser.getEmail(),mockUser.getPass());
         Assertions.assertNotNull(nu);
+    }
+
+    @Test
+    public void negative_login_test() {
+        when(mockUserDAO.getByEmail(mockUser.getEmail())).thenReturn(mockUser);
+
+        mockAuthenticationService.userLogin(mockUser.getEmail(),mockUser.getPass());
+
+        Assertions.assertNull(null,mockUser2.getEmail());
     }
 }

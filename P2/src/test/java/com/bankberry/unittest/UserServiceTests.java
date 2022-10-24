@@ -22,18 +22,18 @@ import static org.mockito.Mockito.*;
 
 
     /*
-    -updateChecking
+    -updateChecking--
     -updateCheckingTransaction
-    -updateSaving
+    -updateSaving--
     -updateSavingTransaction
-    -checkingBalances
-    -checkCheckingTransactions
-    -savingBalances
-    -checkSavingTransaction
-    -loginCheck
+    -checkingBalances--
+    -checkCheckingTransactions--
+    -savingBalances--
+    -checkSavingTransaction--
+    -loginCheck--
     -fundsTransferChecking
     -fundsTransferSaving
-    -submitLoanAppCheck
+    -submitLoanAppCheck--
     -emailChange
     -passChange
     -checkPendingLoan

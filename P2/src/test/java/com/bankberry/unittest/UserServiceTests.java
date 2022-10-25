@@ -3,7 +3,6 @@ package com.bankberry.unittest;
 
 import com.bankberry.DAOS.*;
 import com.bankberry.entities.*;
-import com.bankberry.services.AuthenticationService;
 import com.bankberry.services.UserService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
@@ -93,12 +92,22 @@ public class UserServiceTests {
         mockLoanAppDAO = new LoanAppDAO();
         mockSavingsAccountDAO = new SavingsAccountDAO();
         mockSavingsTransactionDAO = new SavingsTransactionDAO();
-        mockUserService = new UserService(mockCheckingTransactionsDAO,mockSavingsTransactionDAO,mockCheckingAccountDAO,mockSavingsAccountDAO,mockLoanAppDAO);
+        mockUserService = new UserService(mockCheckingTransactionsDAO,mockSavingsTransactionDAO,mockCheckingAccountDAO,mockSavingsAccountDAO,mockLoanAppDAO,mockUserDAO);
     }
 
     @BeforeEach
     public void mockData() {
         mockLoanApplicationList = new ArrayList<>(Arrays.asList(mockLoanApplication));
+
+        mockUser = new User(
+                1,
+                "Nick",
+                "Kuhaneck",
+                "example@gmail.com",
+                "pass123",
+                2,
+                3
+        );
 
         mockCheckingAccount = new CheckingAccount(
                 1,
@@ -180,6 +189,39 @@ public class UserServiceTests {
     public void update_Saving() {
         mockUserService.updateSavings(mockSavingsAccount.getSavingsAccountNumber(),mockSavingsTransactions.getSavingsTransAmount());
         verify(mockSavingsAccountDAO,times(1)).updateSavings(mockSavingsAccount.getSavingsAccountNumber(),mockSavingsTransactions.getSavingsTransAmount());
+    }
+
+    @Test
+    public void create_Checkings_Transaction() {
+        when(mockUserService.createCheckingTransactions(mockCheckingTransactions)).thenReturn(mockCheckingTransactions);
+        CheckingTransactions createC = mockUserService.createCheckingTransactions(mockCheckingTransactions);
+        Assertions.assertNotNull(createC);
+    }
+
+    @Test
+    public void create_Savings_Transaction() {
+        when(mockUserService.createSavingsTransactions(mockSavingsTransactions)).thenReturn(mockSavingsTransactions);
+        SavingsTransactions createS = mockUserService.createSavingsTransactions(mockSavingsTransactions);
+        Assertions.assertNotNull(createS);
+    }
+
+    @Test
+    public void create_Loan_App() {
+        when(mockUserService.createLoanApp(mockLoanApplication)).thenReturn(mockLoanApplication);
+        LoanApplication loanApp = mockUserService.createLoanApp(mockLoanApplication);
+        Assertions.assertNotNull(loanApp);
+    }
+
+    @Test
+    public void update_Email() {
+        mockUserService.updateEmail(mockUser.getEmail(),mockUser.getAccessNumber());
+        verify(mockUserDAO,times(1)).updateEmail(mockUser.getEmail(),mockUser.getAccessNumber());
+    }
+
+    @Test
+    public void update_Password() {
+        mockUserService.updatePassword(mockUser.getPass(),mockUser.getAccessNumber());
+        verify(mockUserDAO,times(1)).updatePass(mockUser.getPass(),mockUser.getAccessNumber());
     }
 
 

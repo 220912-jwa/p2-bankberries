@@ -31,6 +31,9 @@ public class AuthenticationServiceTests {
     @Mock
     private User mockUser2;
 
+    @Mock
+    private User mockUser3;
+
     @BeforeAll
     public static void setup() {
         mockUserDAO = new UserDAO();
@@ -58,6 +61,16 @@ public class AuthenticationServiceTests {
                 1,
                 2
         );
+
+        mockUser3 = new User(
+                1,
+                "Nick",
+                "Kuhaneck",
+                "example@gmail.com",
+                "pass123pass",
+                1,
+                2
+        );
     }
 
     @Test
@@ -68,11 +81,16 @@ public class AuthenticationServiceTests {
     }
 
     @Test
-    public void negative_login_test() {
+    public void wrong_username_login_test() {
         when(mockUserDAO.getByEmail(mockUser.getEmail())).thenReturn(mockUser);
-
         mockAuthenticationService.userLogin(mockUser.getEmail(),mockUser.getPass());
-
         Assertions.assertNull(null,mockUser2.getEmail());
+    }
+
+    @Test
+    public void wrong_Password_login_test() {
+        when(mockUserDAO.getByEmail(mockUser.getEmail())).thenReturn(mockUser);
+        mockAuthenticationService.userLogin(mockUser.getEmail(),mockUser.getPass());
+        Assertions.assertNull(null,mockUser3.getPass());
     }
 }

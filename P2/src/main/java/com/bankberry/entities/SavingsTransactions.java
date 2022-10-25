@@ -7,6 +7,14 @@ public class SavingsTransactions {
 
     private int savingsAccountId;
 
+    public int getSavingsAccountId() {
+        return savingsAccountId;
+    }
+
+    public void setSavingsAccountId(int savingsAccountId) {
+        this.savingsAccountId = savingsAccountId;
+    }
+
     public SavingsTransactions() {
     }
 

@@ -35,21 +35,29 @@ public class SavingsTransactionDAO {
         return null;
     }
 
-    public void createTransaction(String descript, double amount, int savings_id){
+    public SavingsTransactions createTransaction(SavingsTransactions savingsTransactions){
         try(Connection connection = ConnectionUtil.createConnection()){
             String sql = "insert into project2.savings_transactions values(default, ?, ?, ?)";
             PreparedStatement ps = connection.prepareStatement(sql);
-            ps.setString(1, descript);
-            ps.setDouble(2,amount);
-            ps.setInt(3,savings_id);
+            ps.setString(1, savingsTransactions.getSavingsTransDescription());
+            ps.setDouble(2,savingsTransactions.getSavingsTransAmount());
+            ps.setInt(3,savingsTransactions.getSavingsAccountId());
 
-            ps.execute();
+            ResultSet rs = ps.executeQuery();
+            if(rs.next()){
+                rs.getInt(savingsTransactions.getSavingsTransId());
+
+
+                return savingsTransactions;
+            }
+
+
 
 
 
         }catch(SQLException e){
             e.printStackTrace();
-        }
+        }return null;
     }
 
 

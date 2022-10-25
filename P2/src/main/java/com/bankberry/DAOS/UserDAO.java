@@ -64,6 +64,31 @@ public class UserDAO {
 
 }
 
+    public void updateEmail(String email, int accessNumber){
+        try(Connection connection = ConnectionUtil.createConnection()){
+            String sql ="update project2.users set email =? where access_number = ?";
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setString(1,email);
+            ps.setInt(2,accessNumber);
+            ps.execute();
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+
+    }
+
+    public void updatePass(String password, int accessNumber){
+        try(Connection connection = ConnectionUtil.createConnection()){
+            String sql = "update project2.users set pass=? where access_number=?";
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setString(1, password);
+            ps.setInt(2, accessNumber);
+            ps.execute();
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+
 
 
 

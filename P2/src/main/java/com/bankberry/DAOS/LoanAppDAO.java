@@ -13,16 +13,23 @@ import java.util.List;
 public class LoanAppDAO {
 
 
-    public void createLoan(double amount, int term, int userId){
+    public LoanApplication createLoan(LoanApplication loanApplication){
         try(Connection connection = ConnectionUtil.createConnection()){
             String sql = "insert into porject2.loan_applications values(default, ?,?,? )";
             PreparedStatement ps = connection.prepareStatement(sql);
-            ps.setDouble(1,amount);
-            ps.setInt(2,term);
-            ps.setInt(3,userId);
+            ps.setDouble(1,loanApplication.getLoanAmount());
+            ps.setInt(2,loanApplication.getTermInMonths());
+            ps.setInt(3,loanApplication.getUser_id());
+            ResultSet rs = ps.executeQuery();
+            if(rs.next()){
+                loanApplication.getLoanAppId();
+                return loanApplication;
+            }
+
         }catch(SQLException e){
             e.printStackTrace();
         }
+        return null;
 
 
     }

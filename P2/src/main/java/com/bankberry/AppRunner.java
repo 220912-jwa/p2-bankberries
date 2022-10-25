@@ -23,7 +23,7 @@ public class AppRunner {
         SavingsTransactionDAO savingsTransactionDAO = new SavingsTransactionDAO();
 
         AuthenticationService authenticationService = new AuthenticationService(userDAO);
-        UserService userService = new UserService(checkingTransactionsDAO,savingsTransactionDAO,checkingAccountDAO,savingsAccountDAO,loanAppDAO);
+        UserService userService = new UserService(checkingTransactionsDAO,savingsTransactionDAO,checkingAccountDAO,savingsAccountDAO,loanAppDAO,userDAO);
 
         AuthenticationController authenticationController = new AuthenticationController(authenticationService);
         UserController userController = new UserController(userService);
@@ -37,6 +37,12 @@ public class AppRunner {
              get(authenticationController.userLogin);
          });
          path("user/{ID}", ()->{
+             path("updatedInfoEmail", ()->{
+                 post(userController::updateEmail);
+             });
+             path("updatedInfo",()->{
+                post(userController::newPassword);
+             });
 
              path("savingsaccount",()->{
                  get(userController::getSavingsAccountById);
@@ -55,16 +61,17 @@ public class AppRunner {
                     });});
              path("loanapps",()->{
                  get(userController::getAllLoanAppsById);
-
+                 post(userController::createLoanApp);
              });
 
 
              path("savings-transactions", ()->{
-
                  get(userController::getSavingsTransactionsById);
+                 post(userController::createSavingsTransaction);
              });
              path("checking-transactions", ()->{
                  get(userController::getCheckingTransactionsById);
+                 post(userController::createCheckingTransaction);
              });
          });
 

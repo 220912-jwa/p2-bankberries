@@ -13,15 +13,17 @@ public class UserService {
     private CheckingAccountDAO checkingAccountDAO;
     private SavingsAccountDAO savingsAccountDAO;
     private LoanAppDAO loanAppDAO;
-
+    private UserDAO userDAO;
 
     public UserService(CheckingTransactionsDAO checkingTransactionsDAO, SavingsTransactionDAO savingsTransactionDAO,
-                       CheckingAccountDAO checkingAccountDAO, SavingsAccountDAO savingsAccountDAO, LoanAppDAO loanAppDAO) {
+                       CheckingAccountDAO checkingAccountDAO, SavingsAccountDAO savingsAccountDAO,
+                       LoanAppDAO loanAppDAO, UserDAO userDAO) {
         this.checkingTransactionsDAO = checkingTransactionsDAO;
         this.savingsTransactionDAO = savingsTransactionDAO;
         this.checkingAccountDAO = checkingAccountDAO;
         this.savingsAccountDAO = savingsAccountDAO;
         this.loanAppDAO = loanAppDAO;
+        this.userDAO = userDAO;
     }
 
     public CheckingAccount getById(int id){
@@ -51,5 +53,26 @@ public class UserService {
     }
     public void updateSavings(int id, double amount){
         savingsAccountDAO.updateSavings(id, amount);
+    }
+
+
+    public CheckingTransactions createCheckingTransactions(CheckingTransactions checkingTransactions){
+
+        return checkingTransactionsDAO.createTransaction(checkingTransactions);
+    }
+    public SavingsTransactions createSavingsTransactions(SavingsTransactions savingsTransactions){
+        return savingsTransactionDAO.createTransaction(savingsTransactions);
+    }
+
+    public LoanApplication createLoanApp(LoanApplication loanApplication){
+        return loanAppDAO.createLoan(loanApplication);
+    }
+
+    public void updateEmail(String email, int accessNumber){
+        userDAO.updateEmail(email, accessNumber);
+
+    }
+    public void updatePassword(String password, int accessNumber){
+        userDAO.updatePass(password,accessNumber);
     }
 }

@@ -37,19 +37,22 @@ public class CheckingTransactionsDAO {
     }
 
 
-    public void createTransaction(String descript, double amount, int checking_id){
+    public CheckingTransactions createTransaction(CheckingTransactions checkingTransactions){
         try(Connection connection = ConnectionUtil.createConnection()){
             String sql = "insert into project2.checking_transactions values(default, ?, ?, ?)";
             PreparedStatement ps = connection.prepareStatement(sql);
-            ps.setString(1, descript);
-            ps.setDouble(2,amount);
-            ps.setInt(3,checking_id);
-            ps.execute();
-
+            ps.setString(1, checkingTransactions.getTransDescription());
+            ps.setDouble(2,checkingTransactions.getCkTransAmount());
+            ps.setInt(3,checkingTransactions.getCheckingAccountId());
+            ResultSet rs = ps.executeQuery();
+            if(rs.next()){
+                rs.getInt(checkingTransactions.getCkingTransId());
+                return checkingTransactions;
+            }
 
 
         }catch(SQLException e){
             e.printStackTrace();
-        }
+        }return null;
     }
 }

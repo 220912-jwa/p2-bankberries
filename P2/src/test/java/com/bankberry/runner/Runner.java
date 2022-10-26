@@ -13,7 +13,7 @@ import java.io.File;
 
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "src/test/java/com/bankberry/features", glue = "src/test/java/com/bankberry/steps")
+@CucumberOptions(features = "src/test/java/com/bankberry/features", glue = "com.bankberry.steps")
 
 public class Runner {
 

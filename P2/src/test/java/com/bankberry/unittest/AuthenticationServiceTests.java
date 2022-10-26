@@ -44,8 +44,8 @@ public class AuthenticationServiceTests {
     public void mockData() {
         mockUser = new User(
                 1,
-                "Nick",
-                "Kuhaneck",
+                "John",
+                "Doe",
                 "example@gmail.com",
                 "pass123",
                 2,
@@ -54,8 +54,8 @@ public class AuthenticationServiceTests {
 
         mockUser2 = new User(
                 1,
-                "Nick",
-                "Kuhaneck",
+                "John",
+                "Doe",
                 "example@yahoo.com",
                 "pass123",
                 1,
@@ -64,8 +64,8 @@ public class AuthenticationServiceTests {
 
         mockUser3 = new User(
                 1,
-                "Nick",
-                "Kuhaneck",
+                "John",
+                "Doe",
                 "example@gmail.com",
                 "pass123pass",
                 1,

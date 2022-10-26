@@ -34,7 +34,7 @@ public class AppRunner {
 
         app.routes(() -> {
          path("login", ()-> {
-             get(authenticationController.userLogin);
+             post(authenticationController.userLogin);
          });
          path("user/{ID}", ()->{
              path("updatedInfoEmail", ()->{

@@ -15,7 +15,7 @@ public class SavingsTransactionDAO {
     public SavingsTransactions getById(int id){
 
         try(Connection connection = ConnectionUtil.createConnection()){
-            String sql = "select * from project2.savings_transactions where transaction_id = ?";
+            String sql = "select * from project2.savings_transactions where savings_account_id = ?";
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setInt(1,id);
             ResultSet rs = ps.executeQuery();

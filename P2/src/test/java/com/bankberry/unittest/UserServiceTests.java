@@ -137,7 +137,8 @@ public class UserServiceTests {
                 5,
                 3000,
                 12,
-                1
+                1,
+                "Under Review"
         );
 
     }

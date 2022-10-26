@@ -16,7 +16,8 @@ public class CheckingTransactionsDAO {
     public CheckingTransactions getById(int id){
 
         try(Connection connection = ConnectionUtil.createConnection()){
-            String sql = "select * from project2.checking_transactions where checking_account_id = ?";
+            String sql = "select transaction_id ,transaction_description ,amount,account_number, checking_balance from checking_transactions ct left join  \n" +
+                    "checking_account ca on  (ct.checking_account_id= ca.account_number) ";
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setInt(1,id);
             ResultSet rs = ps.executeQuery();

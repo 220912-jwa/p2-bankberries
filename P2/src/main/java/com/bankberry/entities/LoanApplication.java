@@ -6,6 +6,8 @@ public class LoanApplication {
     private int termInMonths;
     private int user_id;
 
+    private String loanStatus;
+
     public int getUser_id() {
         return user_id;
     }
@@ -17,17 +19,27 @@ public class LoanApplication {
     public LoanApplication() {
     }
 
-    public LoanApplication(double loanAmount, int termInMonths, int user_id) {
+    public LoanApplication(double loanAmount, int termInMonths, int user_id, String loanStatus) {
         this.loanAmount = loanAmount;
         this.termInMonths = termInMonths;
         this.user_id = user_id;
+        this.loanStatus = loanStatus;
     }
 
-    public LoanApplication(int loanAppId, double loanAmount, int termInMonths, int user_id) {
+    public LoanApplication(int loanAppId, double loanAmount, int termInMonths, int user_id, String loanStatus) {
         this.loanAppId = loanAppId;
         this.loanAmount = loanAmount;
         this.termInMonths = termInMonths;
         this.user_id = user_id;
+        this.loanStatus = loanStatus;
+    }
+
+    public String getLoanStatus() {
+        return loanStatus;
+    }
+
+    public void setLoanStatus(String loanStatus) {
+        this.loanStatus = loanStatus;
     }
 
     public int getLoanAppId() {
@@ -61,6 +73,7 @@ public class LoanApplication {
                 ", loanAmount=" + loanAmount +
                 ", termInMonths=" + termInMonths +
                 ", user_id=" + user_id +
+                ", loanStatus='" + loanStatus + '\'' +
                 '}';
     }
 }

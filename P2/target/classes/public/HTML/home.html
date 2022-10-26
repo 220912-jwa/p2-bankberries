@@ -6,8 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Home</title>
         <link rel="stylesheet" href="..\..\public\CSS\home.css"/>
+        <script type="text/javascript" src="..\..\public\JS\home.js" ></script>
     </head>
-    <body>
+    <body onload="retrieveData()">
         <main id="homeMain">
             <div id="homeNav">
                 <a id="homeLink" href="home">Home</a>
@@ -18,11 +19,11 @@
             <table id="checkingTable" border="1">
                 <tr id="checkingRow">
                     <th id="checkingHead"><a href="Checking Account"</a>Checking Account</th>
-                    <th id="accountNumber">Some Text</th>
+                    <td id="accountNumber"></td>
                 </tr>
                 <tr id="balanceRow">
                     <td id="balance"><strong>Balance</strong></td>
-                    <td id="accountBalance">Some Text</td>
+                    <td id="accountBalance"></td>
                 </tr>
             </table>
             <br></br>
@@ -40,18 +41,14 @@
             <br></br>
             <br></br>
             <table id="loanTable" border="1">
-                <tr>
-                    <th id="idHead">Loan App ID</th>
-                    <th id="statusHead">Status</th>
-                    <th id="amountHead">Amount</th>
-                    <th id="termHead">Term</th>
-                </tr>
-                <tr>
-                    <td id="loanID">ID Number</td>
-                    <td id="loanStatus">Some Text</td>
-                    <td id="loanAmount">Some Text</td>
-                    <td id="loanTerm">Some Text</td>
-                </tr>
+                <tbody id="loanTableBody">
+                    <tr>
+                        <th id="idHead">Loan App ID</th>
+                        <th id="statusHead">Status</th>
+                        <th id="amountHead">Amount</th>
+                        <th id="termHead">Term</th>
+                    </tr>
+                </tbody>
             </table>
         </main>
     </body>

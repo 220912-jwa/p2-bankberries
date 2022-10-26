@@ -3,10 +3,10 @@ async function memberLogin() {
     pass = document.getElementById("passwordInput").value;
 
     let credentials = {
-        username: user,
-        password: pass,
+        email: user,
+        pass: pass,
     };
-    
+
     console.log(credentials);
 
     credentialsJSON = JSON.stringify(credentials);
@@ -14,7 +14,7 @@ async function memberLogin() {
 
     let baseUrl = "http://localhost:8080";
 
-    let res = await fetch("${baseUrl}/login", {
+    let res = await fetch(`${baseUrl}/login`, {
         method: "POST",
         header: { "Content-Type": "application/json" },
         body: credentialsJSON,
@@ -24,7 +24,7 @@ async function memberLogin() {
 
         let loggedInMember = await res.json();
         sessionStorage.setItem("loggedInMember", loggedInMember.accessNumber);
-        // document.location.assign("memberLogin.html");
+        document.location.assign("./home.html");
     } else {
         console.log("Failure");
     }

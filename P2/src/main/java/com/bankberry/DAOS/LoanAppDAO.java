@@ -46,7 +46,8 @@ public class LoanAppDAO {
                 rs.getInt("app_id"),
                 rs.getDouble("amount"),
                 rs.getInt("term"),
-                rs.getInt("user_id")
+                rs.getInt("user_id"),
+                rs.getString("status")
                 );
                 loanList.add(loan);
 

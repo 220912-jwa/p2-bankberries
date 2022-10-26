@@ -6,8 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Home</title>
         <link rel="stylesheet" href="..\..\public\CSS\home.css"/>
+        <script type="text/javascript" src="..\..\public\JS\home.js" ></script>
     </head>
-    <body>
+    <body onload="retrieveData()">
         <main id="homeMain">
             <div id="homeNav">
                 <a id="homeLink" href="home">Home</a>
@@ -18,11 +19,11 @@
             <table id="checkingTable" border="1">
                 <tr id="checkingRow">
                     <th id="checkingHead"><a href="Checking Account"</a>Checking Account</th>
-                    <th id="accountNumber">Some Text</th>
+                    <td id="accountNumber">Account Number</td>
                 </tr>
                 <tr id="balanceRow">
                     <td id="balance"><strong>Balance</strong></td>
-                    <td id="accountBalance">Some Text</td>
+                    <td id="accountBalance"></td>
                 </tr>
             </table>
             <br></br>

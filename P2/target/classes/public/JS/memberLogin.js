@@ -6,7 +6,7 @@ async function memberLogin() {
         username: user,
         password: pass,
     };
-
+    
     console.log(credentials);
 
     credentialsJSON = JSON.stringify(credentials);
@@ -24,7 +24,7 @@ async function memberLogin() {
 
         let loggedInMember = await res.json();
         sessionStorage.setItem("loggedInMember", loggedInMember.accessNumber);
-        document.location.assign("memberLogin.html");
+        // document.location.assign("memberLogin.html");
     } else {
         console.log("Failure");
     }

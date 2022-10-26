@@ -6,6 +6,7 @@ import com.bankberry.controllers.UserController;
 import com.bankberry.services.AuthenticationService;
 import com.bankberry.services.UserService;
 import io.javalin.Javalin;
+import io.javalin.http.staticfiles.Location;
 
 
 import static io.javalin.apibuilder.ApiBuilder.get;
@@ -29,6 +30,7 @@ public class AppRunner {
         UserController userController = new UserController(userService);
         Javalin app = Javalin.create(config ->{
             config.enableCorsForAllOrigins();
+            config.addStaticFiles("public/HTML", Location.CLASSPATH);
 
         }).start(8080);
 

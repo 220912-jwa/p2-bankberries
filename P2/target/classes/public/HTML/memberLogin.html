@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Login</title>
         <link rel="stylesheet" href="..\..\public\CSS\login.css" />
-        <script type="text" src="..\..\public\memberLogin.js" />
+        <script type="text/javascript" src="..\..\public\JS\memberLogin.js" ></script>
     </head>
 
     <body>
@@ -14,7 +14,7 @@
             <h1 id="loginH1">Bankberries Member Login</h1>
             <!--TODO Make this look nicer. Maybe an underline or top border-->
             <p id="loginP">Enter your credentials below:</p>
-            <form id="loginForm">
+           
                 <input
                     id="usernameInput"
                     class="loginInput"
@@ -29,8 +29,8 @@
                     name="password"
                     placeholder="Password"
                 />
-                <input id="submitButton" type="submit" value="Login" />
-            </form>
+                <button id="submitButton" type="button" onclick="memberLogin()" value="Login" >Login</button>
+            
         </main>
     </body>
 </html>

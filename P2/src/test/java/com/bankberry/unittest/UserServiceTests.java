@@ -101,8 +101,8 @@ public class UserServiceTests {
 
         mockUser = new User(
                 1,
-                "Nick",
-                "Kuhaneck",
+                "John",
+                "Doe",
                 "example@gmail.com",
                 "pass123",
                 2,

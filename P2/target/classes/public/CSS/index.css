@@ -9,7 +9,7 @@ body {
     display: grid;
     justify-items: center;
     align-items: center;
-    background-color: #000000;
+    background-color: rgb(37, 34, 34);
 }
 
 #indexH1 {

@@ -17,6 +17,12 @@ public class CheckingTransactions {
     public CheckingTransactions() {
     }
 
+    public CheckingTransactions(String transDescription, double ckTransAmount, int checkingAccountId) {
+        this.transDescription = transDescription;
+        this.ckTransAmount = ckTransAmount;
+        this.checkingAccountId = checkingAccountId;
+    }
+
     public CheckingTransactions(int ckingTransId, String transDescription, double ckTransAmount, int checkingAccountId) {
         this.ckingTransId = ckingTransId;
         this.transDescription = transDescription;

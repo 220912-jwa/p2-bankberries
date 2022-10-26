@@ -11,6 +11,12 @@ public class SavingsTransactions {
         return savingsAccountId;
     }
 
+    public SavingsTransactions(String savingsTransDescription, double savingsTransAmount, int savingsAccountId) {
+        this.savingsTransDescription = savingsTransDescription;
+        this.savingsTransAmount = savingsTransAmount;
+        this.savingsAccountId = savingsAccountId;
+    }
+
     public void setSavingsAccountId(int savingsAccountId) {
         this.savingsAccountId = savingsAccountId;
     }

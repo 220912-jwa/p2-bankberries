@@ -17,6 +17,12 @@ public class LoanApplication {
     public LoanApplication() {
     }
 
+    public LoanApplication(double loanAmount, int termInMonths, int user_id) {
+        this.loanAmount = loanAmount;
+        this.termInMonths = termInMonths;
+        this.user_id = user_id;
+    }
+
     public LoanApplication(int loanAppId, double loanAmount, int termInMonths, int user_id) {
         this.loanAppId = loanAppId;
         this.loanAmount = loanAmount;

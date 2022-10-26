@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Profile</title>
+    </head>
+    <!--TODO 'Current' will be replaced with the actual member info-->
+    <!--TODO onclick just reloads the page for now, eventually will implement the actual update-->
+    <!--? Unsure how much I like the structure of this page, may change-->
+    <!--? May add a popup that confirms info has been updated-->
+    <body>
+            <h1 id="profileH1">Profile</h1>
+            <label id="emailLabel" for="email">Current Email</label>
+            <br></br>
+            <input id="email" type="text" placeholder="New Email" />
+            <br></br>
+            <button id="emailButton" type="button" onclick="window.location.reload();">Update Email</button>
+            <br></br>
+            <br></br>
+            <label id="passwordLabel" for="password">Current Password</label>
+            <br></br>
+            <input id="password" type="password" placeholder="New Password" />
+            <br></br>
+            <button id="passwordButton" type="button" onclick="window.location.reload();">Update Password</button>
+            <br></br>
+            <br></br>
+            <!--! Address info isn't actually going to be added to database-->
+            <label id="addressLabel" for="address">Current Address</label>
+            <br></br>
+            <input id="address" type="text" placeholder="New Address" />
+            <br></br>
+            <button id="addressButton" type="button" onclick="window.location.reload();">Update Address</button>
+            <br></br>
+            <br></br>
+            <!--! Phone info isn't actually going to be added to database-->
+            <label id="phoneLabel" for="phone">Current Phone Number</label>
+            <br></br>
+            <input id="phone" type="text" placeholder="New Phone Number" />
+            <br></br>
+            <button id="phoneButton" type="button" onclick="window.location.reload();">Update Phone Number</button>
+        </main>
+    </body>
+</html>

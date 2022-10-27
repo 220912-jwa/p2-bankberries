@@ -6,6 +6,16 @@ public class CheckingTransactions {
     private double ckTransAmount;
     private int checkingAccountId;
 
+    private CheckingAccount checkingAccount;
+
+    public CheckingAccount getCheckingAccount() {
+        return checkingAccount;
+    }
+
+    public void setCheckingAccount(CheckingAccount checkingAccount) {
+        this.checkingAccount = checkingAccount;
+    }
+
     public int getCheckingAccountId() {
         return checkingAccountId;
     }
@@ -23,11 +33,12 @@ public class CheckingTransactions {
         this.checkingAccountId = checkingAccountId;
     }
 
-    public CheckingTransactions(int ckingTransId, String transDescription, double ckTransAmount, int checkingAccountId) {
+    public CheckingTransactions(int ckingTransId, String transDescription, double ckTransAmount, int checkingAccountId, CheckingAccount checkingAccount) {
         this.ckingTransId = ckingTransId;
         this.transDescription = transDescription;
         this.ckTransAmount = ckTransAmount;
         this.checkingAccountId = checkingAccountId;
+        this.checkingAccount = checkingAccount;
     }
 
     public int getCkingTransId() {

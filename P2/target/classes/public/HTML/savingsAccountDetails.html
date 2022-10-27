@@ -5,11 +5,17 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Account Details</title>
+        <script
+            type="text/javascript"
+            src="..\..\public\JS\savingsAccount.js"
+        ></script>
     </head>
-    <body>
+    <body onload="updateTransactionData()">
         <main id="savingsMain">
             <div id="savingsDiv">
                 <h1 id="savingsH1">Savings Account</h1>
+                <p><strong>Available Balance:</strong></p>
+                <p id="balance"></p>
                 <table id="savingsTable" border="1">
                     <tbody id="savingsBody">
                         <tr id="savingsRow">

@@ -7,6 +7,16 @@ public class SavingsTransactions {
 
     private int savingsAccountId;
 
+    private SavingsAccount savingsAccount;
+
+    public SavingsAccount getSavingsAccount() {
+        return savingsAccount;
+    }
+
+    public void setSavingsAccount(SavingsAccount savingsAccount) {
+        this.savingsAccount = savingsAccount;
+    }
+
     public int getSavingsAccountId() {
         return savingsAccountId;
     }
@@ -24,11 +34,12 @@ public class SavingsTransactions {
     public SavingsTransactions() {
     }
 
-    public SavingsTransactions(int savingsTransId, String savingsTransDescription, double savingsTransAmount, int savingsAccountId) {
+    public SavingsTransactions(int savingsTransId, String savingsTransDescription, double savingsTransAmount, int savingsAccountId, SavingsAccount savingsAccount) {
         this.savingsTransId = savingsTransId;
         this.savingsTransDescription = savingsTransDescription;
         this.savingsTransAmount = savingsTransAmount;
         this.savingsAccountId = savingsAccountId;
+        this.savingsAccount = savingsAccount;
     }
 
     public int getSavingsTransId() {
@@ -54,6 +65,7 @@ public class SavingsTransactions {
     public void setSavingsTransAmount(double savingsTransAmount) {
         this.savingsTransAmount = savingsTransAmount;
     }
+
 
     @Override
     public String toString() {

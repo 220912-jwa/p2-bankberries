@@ -22,7 +22,7 @@ function updateTable(savingsAccount) {
         currency: "USD",
     });
     document.getElementById("balance").innerHTML = 
-    formatter.format(savingsAccount.savingsBalance);
+    formatter.format(savingsAccount.savingsAccount.savingsBalance);
     let transactionBody = document.getElementById("savingsBody");
     let newTransactionRow = document.createElement("tr");
 

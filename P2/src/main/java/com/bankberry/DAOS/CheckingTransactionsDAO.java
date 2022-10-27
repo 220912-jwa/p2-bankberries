@@ -27,7 +27,7 @@ public class CheckingTransactionsDAO {
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setInt(1,id);
             ResultSet rs = ps.executeQuery();
-            System.out.println(rs);
+
 
             while(rs.next()){
 
@@ -41,7 +41,7 @@ public class CheckingTransactionsDAO {
 
 
                 ));
-                System.out.println(ct);
+
 
             }return ct;
 
@@ -55,14 +55,16 @@ public class CheckingTransactionsDAO {
 
     public CheckingTransactions createTransaction(CheckingTransactions checkingTransactions){
         try(Connection connection = ConnectionUtil.createConnection()){
-            String sql = "insert into project2.checking_transactions values(default, ?, ?, ?)";
+            String sql = "with new_trans as (insert into project2.checking_transactions values(default, ?, ?, ?) returning *)" +
+                    "select transaction_id ,transaction_description ,amount,account_number, checking_balance from  new_trans ct left join " +
+                    "project2.checking_account ca on (ct.checking_account_id= ca.account_number)";
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1, checkingTransactions.getTransDescription());
             ps.setDouble(2,checkingTransactions.getCkTransAmount());
             ps.setInt(3,checkingTransactions.getCheckingAccountId());
             ResultSet rs = ps.executeQuery();
             if(rs.next()){
-                rs.getInt(checkingTransactions.getCkingTransId());
+                rs.getInt("transaction_id");
                 return checkingTransactions;
             }
 

@@ -6,6 +6,7 @@ import com.bankberry.entities.SavingsTransactions;
 import com.bankberry.services.UserService;
 import io.javalin.http.Context;
 
+import javax.crypto.spec.PSource;
 
 
 public class UserController {
@@ -63,11 +64,13 @@ public class UserController {
         CheckingTransactions checkingTransactions = ctx.bodyAsClass(CheckingTransactions.class);
 
         CheckingTransactions ckt = userService.createCheckingTransactions(checkingTransactions);
+
         ctx.json(ckt);
     }
     public void createSavingsTransaction(Context ctx){
         SavingsTransactions savingsTransactions = ctx.bodyAsClass(SavingsTransactions.class);
         SavingsTransactions st = userService.createSavingsTransactions(savingsTransactions);
+
         ctx.json(st);
     }
     public void createLoanApp(Context ctx){

@@ -50,15 +50,18 @@ public class SavingsTransactionDAO {
 
     public SavingsTransactions createTransaction(SavingsTransactions savingsTransactions){
         try(Connection connection = ConnectionUtil.createConnection()){
-            String sql = "insert into project2.savings_transactions values(default, ?, ?, ?)";
+            String sql = "with new_trans as (insert into project2.savings_transactions values(default, ?, ?, ?) returning *)" +
+                    "select transaction_id ,transaction_description ,amount,savings_account_number, savings_balance from new_trans st left join " +
+                    "project2.savings_account sa on (st.savings_account_id = sa.savings_account_number)";
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1, savingsTransactions.getSavingsTransDescription());
             ps.setDouble(2,savingsTransactions.getSavingsTransAmount());
             ps.setInt(3,savingsTransactions.getSavingsAccountId());
 
+
             ResultSet rs = ps.executeQuery();
             if(rs.next()){
-                rs.getInt(savingsTransactions.getSavingsTransId());
+                rs.getInt("transaction_id");
 
 
                 return savingsTransactions;

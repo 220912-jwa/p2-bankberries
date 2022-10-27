@@ -14,6 +14,9 @@ async function retrieveData() {
         );
         document.getElementById("accountNumber").innerText =
            "#" + checkingAccount.accountNumber;
+
+           sessionStorage.setItem("checkingBalance", checkingAccount.balance);
+           
     }
     let savingsResponse = await fetch(`${baseUrl}/user/${ID}/savingsaccount`);
 
@@ -25,10 +28,10 @@ async function retrieveData() {
         );
         document.getElementById("savingsNumber").innerText =
            "#" + savingsAccount.savingsAccountNumber;
+           sessionStorage.setItem("savingsBalance", savingsAccount.savingsBalance);
     }
 
-    sessionStorage.setItem("checkingBalance", checkingAccount.balance);
-    sessionStorage.setItem("savingsBalance", savingsAccount.savingsBalance);
+
     let loanAppResponse = await fetch(`${baseUrl}/user/${ID}/loanapps`);
 
     if (loanAppResponse.status === 200) {

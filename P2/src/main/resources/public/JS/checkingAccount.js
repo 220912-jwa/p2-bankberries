@@ -17,11 +17,13 @@ async function updateTransactionData() {
 }
 
 function updateTable(checkingAccount) {
-    document.getElementById("balance").innerHTML = checkingAccount.balance;
+    
     const formatter = new Intl.NumberFormat("en-US", {
         style: "currency",
         currency: "USD",
     });
+    document.getElementById("balance").innerHTML = formatter.format(checkingAccount.checkingAccount.balance);
+
     let transactionBody = document.getElementById("checkingBody");
     let newTransactionRow = document.createElement("tr");
 

@@ -1,5 +1,6 @@
 package com.bankberry.DAOS;
 
+import com.bankberry.entities.CheckingAccount;
 import com.bankberry.entities.CheckingTransactions;
 
 import com.bankberry.utils.ConnectionUtil;
@@ -17,6 +18,9 @@ public class CheckingTransactionsDAO {
 
     public List<CheckingTransactions> getById(int id){
             List<CheckingTransactions> ct = new ArrayList<>();
+            CheckingAccountDAO checkingAccountDAO = new CheckingAccountDAO();
+            CheckingAccount checkingAccount = new CheckingAccount();
+            checkingAccount = checkingAccountDAO.getByAccountNumber(id);
         try(Connection connection = ConnectionUtil.createConnection()){
             String sql = "select transaction_id ,transaction_description ,amount,account_number, checking_balance from project2.checking_transactions ct left join  \n" +
                     "project2.checking_account ca on  (ct.checking_account_id= ca.account_number) where account_number =?";
@@ -24,12 +28,16 @@ public class CheckingTransactionsDAO {
             ps.setInt(1,id);
             ResultSet rs = ps.executeQuery();
             System.out.println(rs);
+
             while(rs.next()){
+
+
                 ct.add( new CheckingTransactions(
                         rs.getInt("transaction_id"),
                         rs.getString("transaction_description"),
                         rs.getDouble("amount"),
-                        rs.getInt("account_number")
+                        rs.getInt("account_number"),
+                        checkingAccount
 
 
                 ));

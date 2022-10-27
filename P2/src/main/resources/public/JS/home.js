@@ -13,7 +13,7 @@ async function retrieveData() {
             checkingAccount.balance
         );
         document.getElementById("accountNumber").innerText =
-            checkingAccount.accountNumber;
+           "#" + checkingAccount.accountNumber;
     }
     let savingsResponse = await fetch(`${baseUrl}/user/${ID}/savingsaccount`);
 
@@ -24,7 +24,7 @@ async function retrieveData() {
             savingsAccount.savingsBalance
         );
         document.getElementById("savingsNumber").innerText =
-            savingsAccount.savingsAccountNumber;
+           "#" + savingsAccount.savingsAccountNumber;
     }
 
     sessionStorage.setItem("checkingBalance", checkingAccount.balance);

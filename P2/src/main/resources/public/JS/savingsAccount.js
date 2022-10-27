@@ -21,9 +21,8 @@ function updateTable(savingsAccount) {
         style: "currency",
         currency: "USD",
     });
-    document.getElementById("balance").innerHTML = formatter.format(
-        savingsAccount.savingsBalance
-    );
+    document.getElementById("balance").innerHTML = 
+    formatter.format(savingsAccount.savingsAccount.savingsBalance);
     let transactionBody = document.getElementById("savingsBody");
     let newTransactionRow = document.createElement("tr");
 

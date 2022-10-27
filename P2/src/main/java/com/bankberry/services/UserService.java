@@ -37,7 +37,7 @@ public class UserService {
         return loanAppDAO.getAllUserLoans(id);
 
     }
-    public SavingsTransactions getBySavingsTransactionID(int id){
+    public List<SavingsTransactions> getBySavingsTransactionID(int id){
         //use the id for the savings account that is referenced by the foreign key
         return savingsTransactionDAO.getById(id);
 

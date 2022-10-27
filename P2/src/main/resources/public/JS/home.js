@@ -27,6 +27,8 @@ async function retrieveData() {
             savingsAccount.savingsAccountNumber;
     }
 
+    sessionStorage.setItem("checkingBalance", checkingAccount.balance);
+    sessionStorage.setItem("savingsBalance", savingsAccount.savingsBalance);
     let loanAppResponse = await fetch(`${baseUrl}/user/${ID}/loanapps`);
 
     if (loanAppResponse.status === 200) {

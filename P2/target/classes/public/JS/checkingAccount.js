@@ -1,3 +1,31 @@
+async function updateTransactionData(){
+    let ID = sessionStorage.getItem("loggedInMember")
+    let baseUrl = "http://localhost:8080";
+    let transresponse = await fetch(`${baseUrl}/user/${ID}/checking-transactions`);
+
+    if(transresponse === 200){
+        transres = await transresponse.json();
+        console.log(transres);
+        transres.forEach(trans => {
+            updateTable(trans);
+        }); 
+
+    }else{console.log("whoops")}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function updateTable(checkingAccount) {
     document.getElementById("balance").innerHTML = checkingAccount.balance;
     const formatter = new Intl.NumberFormat("en-US", {
@@ -19,5 +47,5 @@ function updateTable(checkingAccount) {
     amountTD.innerHTML = checkingAccount.ckTransAmount;
 
     newTransactionRow.append(transactionNumberTD, descriptionTD, amountTD);
-    newTransactionBody.append(newTransactionRow);
+    transactionBody.append(newTransactionRow);
 }

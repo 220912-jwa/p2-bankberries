@@ -42,7 +42,7 @@ public class UserService {
         return savingsTransactionDAO.getById(id);
 
     }
-    public CheckingTransactions getByCheckingTransactionId(int id){
+    public List<CheckingTransactions> getByCheckingTransactionId(int id){
         //use the id for the checking account that is referenced by the foreign key
         return checkingTransactionsDAO.getById(id);
     }

@@ -8,27 +8,34 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CheckingTransactionsDAO {
 
 
 
-    public CheckingTransactions getById(int id){
-
+    public List<CheckingTransactions> getById(int id){
+            List<CheckingTransactions> ct = new ArrayList<>();
         try(Connection connection = ConnectionUtil.createConnection()){
-            String sql = "select transaction_id ,transaction_description ,amount,account_number, checking_balance from checking_transactions ct left join  \n" +
-                    "checking_account ca on  (ct.checking_account_id= ca.account_number) ";
+            String sql = "select transaction_id ,transaction_description ,amount,account_number, checking_balance from project2.checking_transactions ct left join  \n" +
+                    "project2.checking_account ca on  (ct.checking_account_id= ca.account_number) where account_number =?";
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setInt(1,id);
             ResultSet rs = ps.executeQuery();
-            if(rs.next()){
-                return new CheckingTransactions(
+            System.out.println(rs);
+            while(rs.next()){
+                ct.add( new CheckingTransactions(
                         rs.getInt("transaction_id"),
                         rs.getString("transaction_description"),
                         rs.getDouble("amount"),
-                        rs.getInt("checking_account_id")
-                );
-            }
+                        rs.getInt("account_number")
+
+
+                ));
+                System.out.println(ct);
+
+            }return ct;
 
 
         }catch(SQLException e){

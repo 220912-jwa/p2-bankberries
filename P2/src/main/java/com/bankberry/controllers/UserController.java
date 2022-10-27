@@ -30,6 +30,7 @@ public class UserController {
 
     public void getCheckingTransactionsById(Context ctx){
         int id = Integer.parseInt((ctx.pathParam("ID")));
+        System.out.println(id);
         ctx.status(200);
         ctx.json(userService.getByCheckingTransactionId(id));
     }

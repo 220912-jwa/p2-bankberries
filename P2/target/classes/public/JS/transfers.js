@@ -131,7 +131,7 @@ async function updateBalances(){
 
     let checkingTransaction = {
         ckingTransId: 0,
-        transDate:"",
+        ckingTransDate:"",
         transDescription: checkingTransferDescription,
         ckTransAmount: checkingMoney,
         checkingAccountId: JSON.parse(ID),

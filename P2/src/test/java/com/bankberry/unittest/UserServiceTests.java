@@ -62,25 +62,14 @@ public class UserServiceTests {
     @Mock
     private static CheckingAccountDAO mockCheckingAccountDAO;
 
-    @Mock
     private List<LoanApplication> mockLoanApplicationList;
-
-    @Mock
+    private List<SavingsTransactions> mockSavingsTransactionsList;
+    private List<CheckingTransactions> mockCheckingTransactionsList;
     private SavingsTransactions mockSavingsTransactions;
-
-    @Mock
     private SavingsAccount mockSavingsAccount;
-
-    @Mock
     private LoanApplication mockLoanApplication;
-
-    @Mock
     private CheckingTransactions mockCheckingTransactions;
-
-    @Mock
     private CheckingAccount mockCheckingAccount;
-
-    @Mock
     private User mockUser;
 
 
@@ -98,6 +87,8 @@ public class UserServiceTests {
     @BeforeEach
     public void mockData() {
         mockLoanApplicationList = new ArrayList<>(Arrays.asList(mockLoanApplication));
+        mockSavingsTransactionsList = new ArrayList<>(Arrays.asList(mockSavingsTransactions));
+        mockCheckingTransactionsList = new ArrayList<>(Arrays.asList(mockCheckingTransactions));
 
         mockUser = new User(
                 1,
@@ -120,14 +111,14 @@ public class UserServiceTests {
         );
 
         mockCheckingTransactions = new CheckingTransactions(
-                1,
+                "2022-10-28",
                 "description",
                 100,
                 1
         );
 
         mockSavingsTransactions = new SavingsTransactions(
-                1,
+                "2022-10-28",
                 "description",
                 150,
                 1
@@ -167,15 +158,15 @@ public class UserServiceTests {
 
     @Test
     public void get_Savings_Transaction_Id() {
-        when(mockUserService.getBySavingsTransactionID(mockSavingsTransactions.getSavingsTransId())).thenReturn(mockSavingsTransactions);
-        SavingsTransactions nst = mockUserService.getBySavingsTransactionID(mockSavingsTransactions.getSavingsTransId());
+        when(mockUserService.getBySavingsTransactionID(mockSavingsTransactions.getSavingsTransId())).thenReturn(mockSavingsTransactionsList);
+        List<SavingsTransactions> nst = mockUserService.getBySavingsTransactionID(mockSavingsTransactions.getSavingsTransId());
         Assertions.assertNotNull(nst);
     }
 
     @Test
     public void get_Checking_Transaction_Id() {
-        when(mockUserService.getByCheckingTransactionId(mockCheckingTransactions.getCheckingAccountId())).thenReturn(mockCheckingTransactions);
-        CheckingTransactions nct = mockUserService.getByCheckingTransactionId(mockCheckingTransactions.getCheckingAccountId());
+        when(mockUserService.getByCheckingTransactionId(mockCheckingTransactions.getCheckingAccountId())).thenReturn(mockCheckingTransactionsList);
+        List<CheckingTransactions> nct = mockUserService.getByCheckingTransactionId(mockCheckingTransactions.getCheckingAccountId());
         Assertions.assertNotNull(nct);
     }
 

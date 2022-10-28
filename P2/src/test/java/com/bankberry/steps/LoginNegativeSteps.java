@@ -15,7 +15,7 @@ public class LoginNegativeSteps {
 
     @When("the user types in the incorrect username")
     public void theUserTypesInTheIncorrectUsername() {
-        driver.findElement(By.id("usernameInput")).sendKeys("");
+        driver.findElement(By.id("usernameInput")).sendKeys("fsaesff");
     }
 
     @Then("the user should see an alert")
@@ -27,6 +27,6 @@ public class LoginNegativeSteps {
 
     @When("the user types in the incorrect password")
     public void theUserTypesInTheIncorrectPassword() {
-        driver.findElement(By.id("passwordInput")).sendKeys("");
+        driver.findElement(By.id("passwordInput")).sendKeys("fsdsdfsfed");
     }
 }

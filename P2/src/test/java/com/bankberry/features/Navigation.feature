@@ -7,7 +7,9 @@ Feature: Navigation
 
     Examples:
       | Link            | Link Title        |
-      | Checking Account| Checking Home     |
-      | Savings Account | Savings Home      |
+      | Checking Account| Checking Details  |
+      | Savings Account | Savings Details   |
       | Apply for a loan| Loan Application  |
       | Home            | Home              |
+      | Contact Us      | Contact Us        |
+      | Profile         | Profile           |

@@ -34,12 +34,12 @@ public class LoginPositiveSteps {
 
     @When("the user types in the correct username")
     public void theUserTypesInTheCorrectUsername() {
-        driver.findElement(By.id("usernameInput")).sendKeys("");
+        driver.findElement(By.id("usernameInput")).sendKeys("mrKing@fakeDomain.com");
     }
 
     @When("the user types in the correct password")
     public void theUserTypesInTheCorrectPassword() {
-        driver.findElement(By.id("passwordInput")).sendKeys("");
+        driver.findElement(By.id("passwordInput")).sendKeys("password");
     }
 
     @When("the user clicks the login button")
@@ -51,6 +51,6 @@ public class LoginPositiveSteps {
     public void theUserShouldBeOnThePage() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.id("savingsTable")));
-        assertEquals("",driver.findElement(By.id("")).getText());
+        assertEquals("This is an actual home page",driver.findElement(By.id("homeH1")).getText());
     }
 }

@@ -22,8 +22,8 @@ public class NavSteps {
         driver.findElement(By.id("managerButton")).click();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.id("submitButton")));
-        driver.findElement(By.id("usernameInput")).sendKeys("");
-        driver.findElement(By.id("passwordInput")).sendKeys("");
+        driver.findElement(By.id("usernameInput")).sendKeys("mrKing@fakeDomain.com");
+        driver.findElement(By.id("passwordInput")).sendKeys("password");
         driver.findElement(By.id("submitButton")).click();
         wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.id("savingsTable")));
     }
@@ -37,6 +37,6 @@ public class NavSteps {
     public void theUserShouldBeOnThePage(String arg0) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.id("")));
-        assertEquals(arg0, driver.findElement(By.id("")).getText());
+        assertEquals(arg0, driver.findElement(By.xpath("/html/head/title")).getText());
     }
 }

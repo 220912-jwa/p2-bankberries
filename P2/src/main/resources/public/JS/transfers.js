@@ -66,7 +66,7 @@ async function updateBalances(){
     
                
     {
-        method: 'POST',
+        method: 'PUT',
         headers:{'Content-Type': 'application/json'},
         body:""
     }
@@ -85,7 +85,7 @@ async function updateBalances(){
     
                
     {
-        method: 'POST',
+        method: 'PUT',
         headers:{'Content-Type': 'application/json'},
         body:""
     }

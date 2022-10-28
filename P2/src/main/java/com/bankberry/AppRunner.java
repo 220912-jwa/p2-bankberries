@@ -8,10 +8,7 @@ import com.bankberry.services.UserService;
 import io.javalin.Javalin;
 import io.javalin.http.staticfiles.Location;
 
-
-import static io.javalin.apibuilder.ApiBuilder.get;
-import static io.javalin.apibuilder.ApiBuilder.path;
-import static io.javalin.apibuilder.ApiBuilder.post;
+import static io.javalin.apibuilder.ApiBuilder.*;
 
 public class AppRunner {
     public static void main(String[] args) {
@@ -40,17 +37,17 @@ public class AppRunner {
          });
          path("user/{ID}", ()->{
              path("updatedInfoEmail", ()->{
-                 post(userController::updateEmail);
+                 put(userController::updateEmail);
              });
              path("updatedInfo",()->{
-                post(userController::newPassword);
+                put(userController::newPassword);
              });
 
              path("savingsaccount",()->{
                  get(userController::getSavingsAccountById);
 
                 path("{savingsupdate}",()->{
-                    post(userController::updateSavings);
+                    put(userController::updateSavings);
                 });
 
              });
@@ -59,7 +56,7 @@ public class AppRunner {
                  get(userController::getCheckingById);
 
                     path("{update}", () ->{
-                        post(userController::updateChecking);
+                        put(userController::updateChecking);
                     });});
              path("loanapps",()->{
                  get(userController::getAllLoanAppsById);

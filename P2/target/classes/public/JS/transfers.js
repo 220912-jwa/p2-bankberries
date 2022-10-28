@@ -66,7 +66,7 @@ async function updateBalances(){
     
                
     {
-        method: 'POST',
+        method: 'PUT',
         headers:{'Content-Type': 'application/json'},
         body:""
     }
@@ -85,7 +85,7 @@ async function updateBalances(){
     
                
     {
-        method: 'POST',
+        method: 'PUT',
         headers:{'Content-Type': 'application/json'},
         body:""
     }
@@ -131,7 +131,7 @@ async function updateBalances(){
 
     let checkingTransaction = {
         ckingTransId: 0,
-        transDate:"",
+        ckingTransDate:"",
         transDescription: checkingTransferDescription,
         ckTransAmount: checkingMoney,
         checkingAccountId: JSON.parse(ID),

@@ -2,6 +2,7 @@ package com.bankberry.entities;
 
 public class SavingsTransactions {
     private int savingsTransId;
+    private String transDate;
     private String savingsTransDescription;
     private double savingsTransAmount;
 
@@ -21,7 +22,8 @@ public class SavingsTransactions {
         return savingsAccountId;
     }
 
-    public SavingsTransactions(String savingsTransDescription, double savingsTransAmount, int savingsAccountId) {
+    public SavingsTransactions(String transDate, String savingsTransDescription, double savingsTransAmount, int savingsAccountId) {
+        this.transDate = transDate;
         this.savingsTransDescription = savingsTransDescription;
         this.savingsTransAmount = savingsTransAmount;
         this.savingsAccountId = savingsAccountId;
@@ -34,12 +36,21 @@ public class SavingsTransactions {
     public SavingsTransactions() {
     }
 
-    public SavingsTransactions(int savingsTransId, String savingsTransDescription, double savingsTransAmount, int savingsAccountId, SavingsAccount savingsAccount) {
+    public SavingsTransactions(int savingsTransId, String transDate, String savingsTransDescription, double savingsTransAmount, int savingsAccountId, SavingsAccount savingsAccount) {
         this.savingsTransId = savingsTransId;
+        this.transDate = transDate;
         this.savingsTransDescription = savingsTransDescription;
         this.savingsTransAmount = savingsTransAmount;
         this.savingsAccountId = savingsAccountId;
         this.savingsAccount = savingsAccount;
+    }
+
+    public String getTransDate() {
+        return transDate;
+    }
+
+    public void setTransDate(String transDate) {
+        this.transDate = transDate;
     }
 
     public int getSavingsTransId() {
@@ -71,9 +82,11 @@ public class SavingsTransactions {
     public String toString() {
         return "SavingsTransactions{" +
                 "savingsTransId=" + savingsTransId +
+                ", transDate='" + transDate + '\'' +
                 ", savingsTransDescription='" + savingsTransDescription + '\'' +
                 ", savingsTransAmount=" + savingsTransAmount +
                 ", savingsAccountId=" + savingsAccountId +
+                ", savingsAccount=" + savingsAccount +
                 '}';
     }
 }

@@ -22,7 +22,8 @@ public class CheckingTransactionsDAO {
             CheckingAccount checkingAccount = new CheckingAccount();
             checkingAccount = checkingAccountDAO.getByAccountNumber(id);
         try(Connection connection = ConnectionUtil.createConnection()){
-            String sql = "select transaction_id ,transaction_description ,amount,account_number, checking_balance from project2.checking_transactions ct left join  \n" +
+            String sql = "select transaction_id , trans_date, transaction_description ,amount,account_number," +
+                    " checking_balance from project2.checking_transactions ct left join  \n" +
                     "project2.checking_account ca on  (ct.checking_account_id= ca.account_number) where account_number =?";
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setInt(1,id);
@@ -34,6 +35,7 @@ public class CheckingTransactionsDAO {
 
                 ct.add( new CheckingTransactions(
                         rs.getInt("transaction_id"),
+                        rs.getString("trans_date"),
                         rs.getString("transaction_description"),
                         rs.getDouble("amount"),
                         rs.getInt("account_number"),
@@ -55,8 +57,8 @@ public class CheckingTransactionsDAO {
 
     public CheckingTransactions createTransaction(CheckingTransactions checkingTransactions){
         try(Connection connection = ConnectionUtil.createConnection()){
-            String sql = "with new_trans as (insert into project2.checking_transactions values(default, ?, ?, ?) returning *)" +
-                    "select transaction_id ,transaction_description ,amount,account_number, checking_balance from  new_trans ct left join " +
+            String sql = "with new_trans as (insert into project2.checking_transactions values(default, ?, ?, ?, default) returning *)" +
+                    "select transaction_id , trans_date, transaction_description ,amount,account_number, checking_balance from  new_trans ct left join " +
                     "project2.checking_account ca on (ct.checking_account_id= ca.account_number)";
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1, checkingTransactions.getTransDescription());
@@ -65,6 +67,7 @@ public class CheckingTransactionsDAO {
             ResultSet rs = ps.executeQuery();
             if(rs.next()){
                 rs.getInt("transaction_id");
+                rs.getString("trans_date");
                 return checkingTransactions;
             }
 

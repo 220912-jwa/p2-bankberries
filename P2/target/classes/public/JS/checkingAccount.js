@@ -30,12 +30,15 @@ function updateTable(checkingAccount) {
     let transactionNumberTD = document.createElement("td");
     transactionNumberTD.innerHTML = checkingAccount.ckingTransId;
 
+    let transDateTD = document.createElement("td");
+    transDateTD.innerHTML = checkingAccount.ckingTransDate;
+
     let descriptionTD = document.createElement("td");
     descriptionTD.innerHTML = checkingAccount.transDescription;
 
     let amountTD = document.createElement("td");
     amountTD.innerHTML = formatter.format(checkingAccount.ckTransAmount);
 
-    newTransactionRow.append(transactionNumberTD, descriptionTD, amountTD);
+    newTransactionRow.append(transactionNumberTD, transDateTD, descriptionTD, amountTD);
     transactionBody.append(newTransactionRow);
 }

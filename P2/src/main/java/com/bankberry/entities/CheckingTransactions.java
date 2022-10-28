@@ -2,6 +2,8 @@ package com.bankberry.entities;
 
 public class CheckingTransactions {
     private int ckingTransId;
+
+    private String ckingTransDate;
     private String transDescription;
     private double ckTransAmount;
     private int checkingAccountId;
@@ -27,14 +29,16 @@ public class CheckingTransactions {
     public CheckingTransactions() {
     }
 
-    public CheckingTransactions(String transDescription, double ckTransAmount, int checkingAccountId) {
+    public CheckingTransactions(String ckingTransDate, String transDescription, double ckTransAmount, int checkingAccountId) {
+        this.ckingTransDate = ckingTransDate;
         this.transDescription = transDescription;
         this.ckTransAmount = ckTransAmount;
         this.checkingAccountId = checkingAccountId;
     }
 
-    public CheckingTransactions(int ckingTransId, String transDescription, double ckTransAmount, int checkingAccountId, CheckingAccount checkingAccount) {
+    public CheckingTransactions(int ckingTransId, String ckingTransDate, String transDescription, double ckTransAmount, int checkingAccountId, CheckingAccount checkingAccount) {
         this.ckingTransId = ckingTransId;
+        this.ckingTransDate = ckingTransDate;
         this.transDescription = transDescription;
         this.ckTransAmount = ckTransAmount;
         this.checkingAccountId = checkingAccountId;
@@ -65,13 +69,23 @@ public class CheckingTransactions {
         this.ckTransAmount = ckTransAmount;
     }
 
+    public String getCkingTransDate() {
+        return ckingTransDate;
+    }
+
+    public void setCkingTransDate(String ckingTransDate) {
+        this.ckingTransDate = ckingTransDate;
+    }
+
     @Override
     public String toString() {
         return "CheckingTransactions{" +
                 "ckingTransId=" + ckingTransId +
+                ", ckingTransDate='" + ckingTransDate + '\'' +
                 ", transDescription='" + transDescription + '\'' +
                 ", ckTransAmount=" + ckTransAmount +
                 ", checkingAccountId=" + checkingAccountId +
+                ", checkingAccount=" + checkingAccount +
                 '}';
     }
 }

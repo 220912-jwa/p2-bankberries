@@ -50,8 +50,9 @@ async function updateBalances(){
 
     }else{
         savingsTransferDescription = "Transfer to Checking";
+        
         savingsMoney = checkingMoney*(-1);
-        checkingMoney = checkingMoney*(-1);
+        checkingMoney = checkingMoney;
         checkingTransferDescription = "Transfer from Savings";
     }
     console.log(checkingMoney);
@@ -101,6 +102,7 @@ async function updateBalances(){
     console.log(ID);
     let savingsTransaction = {
         savingsTransId: 0,
+        transDate: "",
         savingsTransDescription: savingsTransferDescription,
         savingsTransAmount: savingsMoney,
         savingsAccountId: JSON.parse(ID),
@@ -129,6 +131,7 @@ async function updateBalances(){
 
     let checkingTransaction = {
         ckingTransId: 0,
+        transDate:"",
         transDescription: checkingTransferDescription,
         ckTransAmount: checkingMoney,
         checkingAccountId: JSON.parse(ID),

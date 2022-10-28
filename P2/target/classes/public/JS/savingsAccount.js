@@ -29,12 +29,15 @@ function updateTable(savingsAccount) {
     let transactionNumberTD = document.createElement("td");
     transactionNumberTD.innerHTML = savingsAccount.savingsTransId;
 
+    let transDateTD = document.createElement("td");
+    transDateTD.innerHTML = savingsAccount.transDate;
+
     let descriptionTD = document.createElement("td");
     descriptionTD.innerHTML = savingsAccount.savingsTransDescription;
 
     let amountTD = document.createElement("td");
     amountTD.innerHTML = formatter.format(savingsAccount.savingsTransAmount);
 
-    newTransactionRow.append(transactionNumberTD, descriptionTD, amountTD);
+    newTransactionRow.append(transactionNumberTD, transDateTD, descriptionTD, amountTD);
     transactionBody.append(newTransactionRow);
 }

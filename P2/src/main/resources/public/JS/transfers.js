@@ -43,13 +43,14 @@ async function updateBalances(){
     let ID = sessionStorage.getItem("loggedInMember");
     let savingsTransferDescription =""
     if(document.getElementById("accounts").value == "checkingAccount"){
-        checkingMoney = checkingMoney;
+        checkingMoney = checkingMoney*(-1);
         savingsTransferDescription = "Transfer from Checking";
         checkingTransferDescription = "Transfer to Savings";
         savingsMoney = checkingMoney*(-1);
 
     }else{
         savingsTransferDescription = "Transfer to Checking";
+        
         savingsMoney = checkingMoney*(-1);
         checkingMoney = checkingMoney;
         checkingTransferDescription = "Transfer from Savings";
@@ -101,6 +102,7 @@ async function updateBalances(){
     console.log(ID);
     let savingsTransaction = {
         savingsTransId: 0,
+        transDate: "",
         savingsTransDescription: savingsTransferDescription,
         savingsTransAmount: savingsMoney,
         savingsAccountId: JSON.parse(ID),
@@ -129,6 +131,7 @@ async function updateBalances(){
 
     let checkingTransaction = {
         ckingTransId: 0,
+        ckingTransDate:"",
         transDescription: checkingTransferDescription,
         ckTransAmount: checkingMoney,
         checkingAccountId: JSON.parse(ID),

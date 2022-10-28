@@ -81,14 +81,14 @@ public class UserController {
 
     public void updateEmail(Context ctx){
         int id = Integer.parseInt(ctx.pathParam("ID"));
-        String updatedInfo = ctx.pathParam("updatedInfoEmail");
-        userService.updateEmail(updatedInfo, id);
+        String updatedInfoEmail = ctx.pathParam("email");
+        userService.updateEmail(updatedInfoEmail, id);
 
     }
 
     public void newPassword(Context ctx){
         int id = Integer.parseInt(ctx.pathParam("ID"));
-        String updatedInfo = ctx.pathParam("updatedInfo");
+        String updatedInfo = ctx.pathParam("password");
         userService.updatePassword(updatedInfo,id);
     }
 

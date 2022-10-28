@@ -36,13 +36,12 @@ public class AppRunner {
              post(authenticationController.userLogin);
          });
          path("user/{ID}", ()->{
-             path("updatedInfoEmail", ()->{
-                 put(userController::updateEmail);
-             });
-             path("updatedInfo",()->{
+             path("{password}",()->{
                 put(userController::newPassword);
              });
-
+             path("{email}", ()->{
+                 patch(userController::updateEmail);
+             });
              path("savingsaccount",()->{
                  get(userController::getSavingsAccountById);
 

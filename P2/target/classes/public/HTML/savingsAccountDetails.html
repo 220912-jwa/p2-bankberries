@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Account Details</title>
+        <script
+            type="text/javascript"
+            src="..\..\public\JS\savingsAccount.js"
+        ></script>
+    </head>
+    <body onload="updateTransactionData()">
+        <div id="homeNav">
+            <a id="homeLink" href="home.html">Home</a>
+            <a id="loanLink" href="loanForm.html">Apply for Loan</a>
+            <a id="contactLink" href="contact.html">Contact Us</a>
+        </div>
+        <main id="savingsMain">
+            <div id="savingsDiv">
+                <h1 id="savingsH1">Savings Account</h1>
+                <p><strong>Available Balance:</strong></p>
+                <!--balance needs to display to the right of the available balance colon-->
+                <p id="balance"></p>
+                <table id="savingsTable" border="1">
+                    <tbody id="savingsBody">
+                        <tr id="savingsRow">
+                            <th id="savingsTransactionNumber">
+                                Transaction ID
+                            </th>
+                            <th id="trans_date">Transaction Date</th>
+                            <th id="savingsDescription">Description</th>
+                            <th id="savingsAmount">Amount</th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main><button type="button"><a href="transfers.html"/>Transfer funds</button>
+    </body>
+</html>

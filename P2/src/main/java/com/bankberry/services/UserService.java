@@ -73,6 +73,7 @@ public class UserService {
 
     }
     public void updatePassword(String password, int accessNumber){
+
         userDAO.updatePass(password,accessNumber);
     }
 }

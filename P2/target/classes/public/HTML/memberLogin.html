@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Login</title>
+        <link rel="stylesheet" href="..\..\public\CSS\login.css" />
+        <script
+            type="text/javascript"
+            src="..\..\public\JS\memberLogin.js"
+        ></script>
+    </head>
+
+    <body>
+        <main id="loginMain">
+            <h1 id="loginH1">Bankberries Member Login</h1>
+            <!--TODO Make this look nicer. Maybe an underline or top border-->
+            <p id="loginP">Enter your credentials below:</p>
+
+            <input
+                id="usernameInput"
+                class="loginInput"
+                type="text"
+                name="username"
+                placeholder="Username"
+            />
+            <input
+                id="passwordInput"
+                class="loginInput"
+                type="password"
+                name="password"
+                placeholder="Password"
+            />
+            <button
+                id="submitButton"
+                type="button"
+                onclick="memberLogin()"
+                value="Login"
+            >
+                Login
+            </button>
+        </main>
+    </body>
+</html>

@@ -25,13 +25,8 @@ public class AuthenticationServiceTests {
     @Mock
     private static UserDAO mockUserDAO;
 
-    @Mock
     private User mockUser;
-
-    @Mock
     private User mockUser2;
-
-    @Mock
     private User mockUser3;
 
     @BeforeAll

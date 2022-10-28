@@ -17,7 +17,7 @@ public class LoginPositiveSteps {
     WebDriver driver = Runner.driver;
     @Given("the user is on the homepage")
     public void theUserIsOnTheHomepage() {
-        driver.get("");
+        driver.get("C:\\Users\\Nicholas\\training-repos\\p2-bankberries\\P2\\src\\main\\resources\\public\\HTML\\index.html");
     }
 
     @When("the user clicks on member login")

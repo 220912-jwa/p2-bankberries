@@ -9,7 +9,7 @@ Feature: Navigation
       | Link            | Link Title        |
       | Checking Account| Checking Details  |
       | Savings Account | Savings Details   |
-      | Apply for a loan| Loan Application  |
+      | Apply for Loan| Loan Application  |
       | Home            | Home              |
       | Contact Us      | Contact Us        |
       | Profile         | Profile           |

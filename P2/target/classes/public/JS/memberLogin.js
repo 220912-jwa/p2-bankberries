@@ -27,5 +27,6 @@ async function memberLogin() {
         document.location.assign("./home.html");
     } else {
         console.log("Failure");
+        alert("Invalid username or password");
     }
 }

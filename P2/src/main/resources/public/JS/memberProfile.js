@@ -4,6 +4,7 @@ async function updateEmail(){
     let email = document.getElementById("email").value;
 
     let emailresponse = await fetch(`${baseUrl}/user/${ID}/${email}`,
+    document.location.assign("./home.html")
 
     {
         method: 'PATCH',
@@ -23,6 +24,7 @@ async function updatePassword(){
     let password = document.getElementById("password").value;
 
     let passresponse = await fetch(`${baseUrl}/user/${ID}/${password}`,
+    document.location.assign("./home.html")
 
     {
         method: 'PUT',

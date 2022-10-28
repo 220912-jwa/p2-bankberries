@@ -1,4 +1,4 @@
-async function loanCreation() {
+async function loanCreation(){
     amount = document.getElementById("amount").value;
     term = document.getElementById("term").value;
 

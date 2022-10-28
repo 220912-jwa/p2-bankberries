@@ -15,11 +15,12 @@ public class LoanAppDAO {
 
     public LoanApplication createLoan(LoanApplication loanApplication){
         try(Connection connection = ConnectionUtil.createConnection()){
-            String sql = "insert into porject2.loan_applications values(default, ?,?,? )";
+            String sql = "insert into project2.loan_applications values(default, ?,?,?,? ) returning *";
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setDouble(1,loanApplication.getLoanAmount());
             ps.setInt(2,loanApplication.getTermInMonths());
             ps.setInt(3,loanApplication.getUser_id());
+            ps.setString(4, loanApplication.getLoanStatus());
             ResultSet rs = ps.executeQuery();
             if(rs.next()){
                 loanApplication.getLoanAppId();

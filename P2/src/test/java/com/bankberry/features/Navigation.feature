@@ -1,7 +1,7 @@
 Feature: Navigation
 
   Scenario Outline: A user can navigate with the navigation links to the correct page
-    Given that the user is logged in and on the "Account Home" page
+    Given the user is logged in and on the Account Home page
     When a user clicks on the "<Link>"
     Then the user should be on the "<Link Title>" page
 

@@ -1,7 +1,7 @@
 Feature: Loan application
 
   Scenario: A user can submit a loan application
-    Given the user is on the homepage
+    Given the user is logged in and on the Account Home page
     When the user clicks on Apply for Loan
     Then the user should be on the loan application submission page
     When the user fills out an amount

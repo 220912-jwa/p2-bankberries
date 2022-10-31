@@ -44,7 +44,7 @@ public class TransactionSteps {
 
     @When("user types in funds amount to transfer")
     public void userTypesInFundsAmountToTransfer() {
-        driver.findElement(By.id("transferAmount")).sendKeys("10000");
+        driver.findElement(By.id("transferAmount")).sendKeys("150");
     }
 
     @When("user clicks on submit")
@@ -59,11 +59,7 @@ public class TransactionSteps {
         assertEquals("This is an actual home page",driver.findElement(By.id("homeH1")).getText());
     }
 
-//    @Then("the user should see their checking account transactions")
-//    public void theUserShouldSeeTheirCheckingAccountTransactions() {
-//
-//        assertNotNull(driver.findElement(By.xpath("//tr[last()]/td[contains(text(),'-500')][last()]")));
-//    }
+
 
     @When("the user clicks on Savings Account")
     public void theUserClicksOnSavingsAccount() {
@@ -84,8 +80,5 @@ public class TransactionSteps {
         se.selectByVisibleText("Checking Account");
     }
 
-//    @Then("the user should see their savings account transactions")
-//    public void theUserShouldSeeTheirSavingsAccountTransactions() {
-//        assertEquals("500",driver.findElement(By.xpath("//tr[last()]/td[contains(text(),'500')][last()]")).getText());
-//    }
+
 }

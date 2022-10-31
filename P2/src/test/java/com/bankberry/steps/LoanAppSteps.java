@@ -18,7 +18,7 @@ public class LoanAppSteps {
     WebDriver driver = Runner.driver;
     @When("the user clicks on Apply for Loan")
     public void theUserClicksOnApplyForLoan() {
-        driver.findElement(By.linkText("Apply for Loan")).click();
+        driver.findElement(By.partialLinkText("Apply for Loan")).click();
 
     }
 
@@ -38,7 +38,7 @@ public class LoanAppSteps {
     @When("the user fills out the term")
     public void theUserFillsOutTheTerm() {
         Select se = new Select(driver.findElement(By.id("term")));
-        se.selectByVisibleText("60");
+        se.selectByValue("60");
     }
 
     @When("the user clicks submit")
@@ -49,7 +49,7 @@ public class LoanAppSteps {
     @Then("the user should be redirected user home page")
     public void theUserShouldBeRedirectedUserHomePage() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.id("loanTable")));
+        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//tr[last()]/td[contains(text(), 'Under Review')][last()]")));
         assertEquals("This is an actual home page",driver.findElement(By.id("homeH1")).getText());
     }
 

@@ -9,7 +9,6 @@ Feature: Transactions
     When user types in funds amount to transfer
     When user clicks on submit
     Then user is redirected to Account home when transfer is successful
-#    Then the user should see their checking account transactions
 
   Scenario: A user can view their savings account transactions
     Given the user is logged in and on the Account Home page
@@ -20,4 +19,3 @@ Feature: Transactions
     When user types in funds amount to transfer
     When user clicks on submit
     Then user is redirected to Account home when transfer is successful
-#    Then the user should see their savings account transactions

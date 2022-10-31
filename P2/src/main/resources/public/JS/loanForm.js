@@ -25,6 +25,7 @@ async function loanCreation(){
 
     if (res.status === 200) {
         console.log("Success");
+        alert("Loan submitted.")
         document.location.assign("./home.html");
     } else {
         console.log("Failure");

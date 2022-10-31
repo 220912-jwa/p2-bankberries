@@ -20,4 +20,15 @@ body {
 #homeNav {
     position: absolute;
     top: 1%;
+    left: 38%;
+}
+
+#homeH1 {
+    position: absolute;
+    top: 10%;
+    left: 34%;
+}
+
+.table {
+    border-radius: 6px;
 }

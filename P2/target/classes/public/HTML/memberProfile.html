@@ -6,36 +6,38 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script type="text/javascript" src="..\..\public\JS\memberProfile.js"></script>
         <title>Profile</title>
+        <link rel="stylesheet" href="..\..\public\CSS\memberProfile.css" />
     </head>
-    <!--TODO 'Current' will be replaced with the actual member info-->
-    <!--TODO onclick just reloads the page for now, eventually will implement the actual update-->
-    <!--? Unsure how much I like the structure of this page, may change-->
-    <!--? May add a popup that confirms info has been updated-->
+    <!--TODO Fix Spacing-->
     <body>
-
         <main>
+            <div id="homeNav">
+                <a id="homeLink" href="home.html">Home</a>
+                
+                <a id="contactLink" href="contact.html">Contact Us</a>
+            </div>
             <h1 id="profileH1">Profile</h1>
-            <label id="emailLabel" for="email">Current Email</label>
+            <label class="current" id="emailLabel" for="email">Current Email</label>
             <br></br>
-            <input id="email" type="text" />
+            <input class="input" id="email" type="text" />
             <br></br>
-            <button id="emailButton" type="button" onclick="updateEmail()">Update Email</button>
+            <button class="button" id="emailButton" type="button" onclick="updateEmail()">Update Email</button>
             <br></br>
             <br></br>
-            <label id="passwordLabel" for="password">Current Password</label>
+            <label class="current" id="passwordLabel" for="password">Current Password</label>
             <br></br>
-            <input id="password" type="password" />
+            <input class="input" id="password" type="password" />
             <br></br>
-            <button id="passwordButton" type="button" onclick="updatePassword()">Update Password</button>
+            <button class="button" id="passwordButton" type="button" onclick="updatePassword()">Update Password</button>
             <br></br>
             <br></br>
             <!--! Address info isn't actually going to be added to database-->
-            <label id="addressLabel" for="address">Current Address</label>
+            <label class="current" id="addressLabel" for="address">Current Address</label>
             <br></br>
            
             
             <!--! Phone info isn't actually going to be added to database-->
-            <label id="phoneLabel" for="phone">Current Phone Number</label>
+            <label class="current" id="phoneLabel" for="phone">Current Phone Number</label>
             <br></br>
 
             <br></br>

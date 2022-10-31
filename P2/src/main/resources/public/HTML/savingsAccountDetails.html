@@ -14,6 +14,7 @@
             src="..\..\public\JS\savingsAccount.js"
         ></script>
     </head>
+    <!--TODO Remove hyperlink color from button-->
     <body onload="updateTransactionData()">
         <div id="homeNav">
             <a id="homeLink" href="home.html">Home</a>
@@ -26,15 +27,19 @@
                 <p class="savingsP"><strong>Available Balance:</strong></p>
                 <!--balance needs to display to the right of the available balance colon-->
                 <p id="balance" class="savingsP"></p>
-                <table id="savingsTable" border="1">
-                    <tbody id="savingsBody">
-                        <tr id="savingsRow">
-                            <th id="savingsTransactionNumber">
+                <table class="table" id="savingsTable" border="1">
+                    <tbody class="table" id="savingsBody">
+                        <tr class="table" id="savingsRow">
+                            <th class="table" id="savingsTransactionNumber">
                                 Transaction ID
                             </th>
-                            <th id="trans_date">Transaction Date</th>
-                            <th id="savingsDescription">Description</th>
-                            <th id="savingsAmount">Amount</th>
+                            <th class="table" id="trans_date">
+                                Transaction Date
+                            </th>
+                            <th class="table" id="savingsDescription">
+                                Description
+                            </th>
+                            <th class="table" id="savingsAmount">Amount</th>
                         </tr>
                     </tbody>
                 </table>

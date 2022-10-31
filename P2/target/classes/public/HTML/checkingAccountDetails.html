@@ -5,7 +5,14 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Checking Details</title>
-        <script type="text/javascript" src="..\..\public\JS\checkingAccount.js"></script>
+        <link
+            rel="stylesheet"
+            href="..\..\public\CSS\checkingAccountDetails.css"
+        />
+        <script
+            type="text/javascript"
+            src="..\..\public\JS\checkingAccount.js"
+        ></script>
     </head>
     <body onload="updateTransactionData()">
         <div id="homeNav">
@@ -16,24 +23,28 @@
         <main id="checkingMain">
             <div id="checkingDiv">
                 <h1 id="checkingH1">Checking Account</h1>
-                <p><strong>Available Balance:</strong></p>
+                <p class="checkingP"><strong>Available Balance:</strong></p>
                 <!--balance needs to display to the right of the available balance colon-->
-                <p id="balance"></p>
-                <table id="checkingTable" border="1">
-                    <tbody id="checkingBody">
-                        <tr id="checkingRow">
-                            <th id="transactionNumber">Transaction ID</th>
-                            <th id="transDate">Transaction Date</th>
-                            <th id="description">Description</th>
-                            <th id="amount">Amount</th>
-                        
+                <p id="balance" class="checkingP"></p>
+                <table id="checkingTable" class="table" border="1">
+                    <tbody class="table" id="checkingBody">
+                        <tr class="table" id="checkingRow">
+                            <th class="table" id="transactionNumber">
+                                Transaction ID
+                            </th>
+                            <th class="table" id="transDate">
+                                Transaction Date
+                            </th>
+                            <th class="table" id="description">Description</th>
+                            <th class="table" id="amount">Amount</th>
                         </tr>
                     </tbody>
                 </table>
-                <br/>
-                
+                <br />
+                <button id="transferButton" type="button">
+                    <a href="transfers.html" />Transfer funds
+                </button>
             </div>
-           
-        </main> <button type="button"><a href="transfers.html"/>Transfer funds</button>
+        </main>
     </body>
 </html>

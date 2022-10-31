@@ -1,0 +1,34 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    font-family: "Times New Roman", Times, serif;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background-color: rgb(216, 216, 216);
+}
+
+#homeH1 {
+    color: #420079;
+    height: 130%;
+}
+
+#homeNav {
+    position: absolute;
+    top: 1%;
+    left: 38%;
+}
+
+#homeH1 {
+    position: absolute;
+    top: 10%;
+    left: 34%;
+}
+
+.table {
+    border-radius: 6px;
+}

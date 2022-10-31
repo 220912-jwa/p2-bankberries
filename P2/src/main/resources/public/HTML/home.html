@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="..\..\public\CSS\home.css"/>
         <script type="text/javascript" src="..\..\public\JS\home.js" ></script>
     </head>
+    <!--TODO Add background color to table cells-->
     <body onload="retrieveData()">
         <main id="homeMain">
             <div id="homeNav">
@@ -18,38 +19,38 @@
             </div>
             <h1 id="homeH1">This is an actual home page</h1>
             <div>
-                <table id="checkingTable" border="1">
-                    <tr id="checkingRow">
-                        <th id="checkingHead"><a href="checkingAccountDetails.html"/a>Checking Account</th>
-                        <th id="accountNumber"></th>
-                    </tr>
-                    <tr id="balanceRow">
-                        <td id="balance"><strong>Balance</strong></td>
-                        <td id="accountBalance"></td>
+                <table class="table" id="checkingTable" border="1">
+                    <tr class="table" id="checkingRow">
+                        <th class="table" id="checkingHead"><a href="checkingAccountDetails.html"/a>Checking Account</th>
+                        <th class="table" id="accountNumber"></th>
+                    </t>
+                    <tr class="table" id="balanceRow">
+                        <td class="table" id="balance"><strong>Balance</strong></td>
+                        <td class="table" id="accountBalance"></td>
                     </tr>
                 </table>
             </div>
             <br></br>
             <br></br>
-            <table id="savingsTable" border="1">
-                <tr id="savingsRow">
-                    <th id="savingsHead"><a href="savingsAccountDetails.html"/a>Savings Account</th>
-                    <th id="savingsNumber">Some Text</th>
+            <table class="table" id="savingsTable" border="1">
+                <tr class="table" id="savingsRow">
+                    <th class="table" id="savingsHead"><a href="savingsAccountDetails.html"/a>Savings Account</th>
+                    <th class="table" id="savingsNumber">Some Text</th>
                 </tr>
                 <tr>
-                    <td><strong>Balance</strong></td>
-                    <td id="savingsBalance"></td>
+                    <td class="table"><strong>Balance</strong></td>
+                    <td class="table" id="savingsBalance"></td>
                 </tr>
             </table>
             <br></br>
             <br></br>
-            <table id="loanTable" border="1">
-                <tbody id="loanTableBody">
-                    <tr>
-                        <th id="idHead">Loan App ID</th>
-                        <th id="statusHead">Status</th>
-                        <th id="amountHead">Amount</th>
-                        <th id="termHead">Term</th>
+            <table class="table" id="loanTable" border="1">
+                <tbody class="table" id="loanTableBody">
+                    <tr class="table">
+                        <th class="table" id="idHead">Loan App ID</th>
+                        <th class="table" id="statusHead">Status</th>
+                        <th class="table" id="amountHead">Amount</th>
+                        <th class="table" id="termHead">Term</th>
                     </tr>
                 </tbody>
             </table>

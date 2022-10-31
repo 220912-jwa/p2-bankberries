@@ -5,23 +5,29 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Loan Application</title>
+        <link
+            rel="stylesheet"
+            href="..\..\public\CSS\loanForm.css"
+        />
         <script type="text/javascript" src="..\..\public\JS\loanForm.js" ></script>
     </head>
+    <!--TODO Add Slogan to page-->
     <body>
         <main id="loanMain">
             <div id="homeNav">
                 <a id="homeLink" href="home.html">Home</a>
                 
                 <a id="contactLink" href="contact.html">Contact Us</a>
+            </div>
             <div id="loanDiv">
                 <label id="amountLabel"for="amount">Desired Loan Amount</label>
                 <input id="amount" type="number"/>
                 <br></br>
                 <label id="termLabel" for="desiredTerm">Desired Loan Term</label>
-                <select id="term" name="desiredTerm">
-                    <option id="option36" value="36">36 Months</option>
-                    <option id="option48" value="48">48 Months</option>
-                    <option id="option60" value="60">60 Months</option>
+                <select class="dropDown" id="term" name="desiredTerm">
+                    <option class="dropDown" id="option36" value="36">36 Months</option>
+                    <option class="dropDown" id="option48" value="48">48 Months</option>
+                    <option class="dropDown" id="option60" value="60">60 Months</option>
                 </select>
                 <button id="submit" onclick="loanCreation()">Submit</button>
             </div>

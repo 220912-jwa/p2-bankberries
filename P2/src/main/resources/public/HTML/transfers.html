@@ -11,17 +11,18 @@
             src="..\..\public\JS\transfers.js"
         ></script>
     </head>
+    <!--TODO Cenetr everything-->
     <body>
         <br />
         <label for="accounts">From:</label>
-        <select id="accounts">
+        <select class="select" id="accounts">
             <option value="empty"></option>
             <option value="checkingAccount">Checking Account</option>
             <option value="savingsAccount">Savings Account</option>
         </select>
         <br />
         <label for="toAccounts">To:</label>
-        <select id="toAccounts">
+        <select class="select" id="toAccounts">
             <option value="empty"></option>
             <option value="checkingAccount">Checking Account</option>
             <option value="savingsAccount">Savings Account</option>
@@ -31,8 +32,10 @@
         <p id="checking"></p>
         <p id="savings"></p>
         <br />
-        <button type="button" onclick="updateBalances()">Submit</button>
-        <button type="button">Cancel</button>
+        <button class="button" type="button" onclick="updateBalances()">
+            Submit
+        </button>
+        <button class="button" type="button">Cancel</button>
     </body>
     <!-- <a href="home.html" /> -->
 </html>

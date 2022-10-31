@@ -9,10 +9,51 @@ body {
     display: grid;
     justify-items: center;
     align-items: center;
-    background-color: rgb(37, 34, 34);
+    background-color: rgb(216, 216, 216);
+}
+
+.h1 {
+    color: #420079;
 }
 
 #indexH1 {
-    color: #9b9b9b;
-    height: 130%;
+    position: absolute;
+    top: 5%;
+    left: 30%;
+}
+
+#slogan {
+    position: absolute;
+    top: 28%;
+    left: 25%;
+}
+
+#indexP {
+    position: absolute;
+    top: 56%;
+    left: 39%;
+}
+
+.button {
+    width: 15%;
+    padding: 7px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    background-color: #535353;
+    cursor: pointer;
+    outline: none;
+}
+
+#employeeButton {
+    position: absolute;
+    bottom: 25%;
+    right: 50%;
+}
+
+#managerButton {
+    position: absolute;
+    bottom: 25%;
+    right: 34%;
 }

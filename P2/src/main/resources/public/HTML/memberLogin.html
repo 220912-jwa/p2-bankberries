@@ -11,35 +11,38 @@
             src="..\..\public\JS\memberLogin.js"
         ></script>
     </head>
-
+    <!--! I made this and employeeLogin match as much as possible so I could use one stylesheet for both login pages-->
+    <!--! I added a ! comment by all changes that could potentially affect testing-->
     <body>
         <main id="loginMain">
             <h1 id="loginH1">Bankberries Member Login</h1>
             <!--TODO Make this look nicer. Maybe an underline or top border-->
             <p id="loginP">Enter your credentials below:</p>
-
-            <input
-                id="usernameInput"
-                class="loginInput"
-                type="text"
-                name="username"
-                placeholder="Username"
-            />
-            <input
-                id="passwordInput"
-                class="loginInput"
-                type="password"
-                name="password"
-                placeholder="Password"
-            />
-            <button
-                id="submitButton"
-                type="button"
-                onclick="memberLogin()"
-                value="Login"
-            >
-                Login
-            </button>
+            <!--!Added the login fields to a <form> like in employee login-->
+            <form id="loginForm">
+                <input
+                    id="usernameInput"
+                    class="loginInput"
+                    type="text"
+                    name="username"
+                    placeholder="Username"
+                />
+                <input
+                    id="passwordInput"
+                    class="loginInput"
+                    type="password"
+                    name="password"
+                    placeholder="Password"
+                />
+                <button
+                    id="submitButton"
+                    type="button"
+                    onclick="memberLogin()"
+                    value="Login"
+                >
+                    Login
+                </button>
+            </form>
         </main>
     </body>
 </html>

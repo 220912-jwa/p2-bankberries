@@ -12,17 +12,20 @@ body {
     background-color: rgb(216, 216, 216);
 }
 
-#loginP {
-    color: #000000;
-    height: 1px;
+#homeNav {
+    position: absolute;
+    top: 1%;
+    right: 45%;
 }
 
-#loginH1 {
+#checkingH1 {
     color: #420079;
+    align-items: center;
     height: 130%;
+    position: absolute;
 }
 
-#loginMain {
+#checkingDiv {
     width: 50%;
     height: 70%;
     display: grid;
@@ -30,32 +33,29 @@ body {
     align-items: center;
     background-color: rgb(216, 216, 216);
     border-radius: 7px;
+    position: absolute;
+    left: 20%;
+    top: 20%;
 }
 
-#loginForm {
+.checkingP {
     align-self: flex-start;
     display: grid;
     justify-items: center;
     align-items: center;
+    position: absolute;
+    top: 1%;
 }
 
-.loginInput::placeholder {
-    color: #9b9b9b;
+#balance {
+    position: absolute;
+    left: 60%;
 }
 
-.loginInput {
-    color: #9b9b9b;
-    background-color: rgb(255, 255, 255);
-    border: none;
-    border-bottom: 2px solid #9b9b9b;
-    margin-bottom: 8px;
-    border-radius: 5px;
-    outline: none;
-    padding: 0px 0px 5px 5px;
-}
-
-#submitButton {
-    width: 35%;
+#transferButton {
+    position: absolute;
+    bottom: 60%;
+    width: 15%;
     padding: 7px;
     border: none;
     border-radius: 5px;

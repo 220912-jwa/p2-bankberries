@@ -5,6 +5,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Savings Details</title>
+        <link
+            rel="stylesheet"
+            href="..\..\public\CSS\savingsAccountDetails.css"
+        />
         <script
             type="text/javascript"
             src="..\..\public\JS\savingsAccount.js"
@@ -19,9 +23,9 @@
         <main id="savingsMain">
             <div id="savingsDiv">
                 <h1 id="savingsH1">Savings Account</h1>
-                <p><strong>Available Balance:</strong></p>
+                <p class="savingsP"><strong>Available Balance:</strong></p>
                 <!--balance needs to display to the right of the available balance colon-->
-                <p id="balance"></p>
+                <p id="balance" class="savingsP"></p>
                 <table id="savingsTable" border="1">
                     <tbody id="savingsBody">
                         <tr id="savingsRow">
@@ -34,7 +38,11 @@
                         </tr>
                     </tbody>
                 </table>
+                <br />
+                <button id="transferButton" type="button">
+                    <a href="transfers.html" />Transfer funds
+                </button>
             </div>
-        </main><button type="button"><a href="transfers.html"/>Transfer funds</button>
+        </main>
     </body>
 </html>

@@ -12,38 +12,21 @@ body {
     background-color: rgb(216, 216, 216);
 }
 
-#loginP {
-    color: #000000;
-    height: 1px;
-}
-
-#loginH1 {
-    color: #420079;
-    height: 130%;
-}
-
-#loginMain {
-    width: 50%;
-    height: 70%;
-    display: grid;
+#homeNav {
     justify-items: center;
     align-items: center;
-    background-color: rgb(216, 216, 216);
-    border-radius: 7px;
+    position: absolute;
+    top: 1%;
+    left: 40%;
 }
 
-#loginForm {
-    align-self: flex-start;
-    display: grid;
-    justify-items: center;
-    align-items: center;
+#loanDiv {
+    position: absolute;
+    bottom: 50%;
+    left: 39%;
 }
 
-.loginInput::placeholder {
-    color: #9b9b9b;
-}
-
-.loginInput {
+#amount {
     color: #9b9b9b;
     background-color: rgb(255, 255, 255);
     border: none;
@@ -54,8 +37,8 @@ body {
     padding: 0px 0px 5px 5px;
 }
 
-#submitButton {
-    width: 35%;
+#submit {
+    width: 20%;
     padding: 7px;
     border: none;
     border-radius: 5px;

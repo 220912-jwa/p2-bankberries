@@ -5,15 +5,32 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Bankberry Home</title>
-        <link rel="stylesheet" href="..\..\public\CSS\index.css"/>
+        <link rel="stylesheet" href="..\..\public\CSS\index.css" />
     </head>
     <body>
         <main id="indexMain">
-            <!--TODO Move h1 text to the top of page and center it-->
-            <h1 id="indexH1">Welcome to Bankberry Credit Union</h1>
-            <button class="button" id="managerButton" type="button" onclick="window.location.href='memberLogin.html'">Member Login</button>
-            <br></br>
-            <button class="button" id="employeeButton" type="button" onclick="window.location.href='employeeLogin.html'">Employee Login</button>
+            <h1 class="h1" id="indexH1">Welcome to Bankberry Credit Union</h1>
+            <h1 class="h1" id="slogan">
+                We know money. You know nothing. Let's do business.
+            </h1>
+            <p id="indexP">Click below to select the appropriate login page:</p>
+            <!--? Have a strong urge to change this from 'managerButton' to memberButton, unsure if it will affect testing-->
+            <button
+                class="button"
+                id="managerButton"
+                type="button"
+                onclick="window.location.href='memberLogin.html'"
+            >
+                Member Login
+            </button>
+            <button
+                class="button"
+                id="employeeButton"
+                type="button"
+                onclick="window.location.href='employeeLogin.html'"
+            >
+                Employee Login
+            </button>
         </main>
     </body>
 </html>

@@ -11,13 +11,3 @@ body {
     align-items: center;
     background-color: rgb(216, 216, 216);
 }
-
-#homeH1 {
-    color: #420079;
-    height: 130%;
-}
-
-#homeNav {
-    position: absolute;
-    top: 1%;
-}

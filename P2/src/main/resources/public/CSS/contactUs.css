@@ -11,6 +11,13 @@ body {
     background-color: rgb(216, 216, 216);
 }
 
+#slogan{
+    font-size: 45px;
+    bottom: 99%;
+    position: absolute;
+
+}
+
 #homeNav {
     position: absolute;
     top: 2%;

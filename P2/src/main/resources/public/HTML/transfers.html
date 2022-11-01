@@ -29,9 +29,12 @@
                 <option value="savingsAccount">Savings Account</option>
             </select>
             <br />
+            <label id="transferLabel" for="transferAmount">Amount to transfer: </label>
             <input id="transferAmount" type="number" onkeyup="transfers()" />
-            <p id="checking"></p>
-            <p id="savings"></p>
+            <label id="checkingLabel" for="checking">New Checking Balance: </label>
+            <p class="balances" id="checking"></p>
+            <label id="savingsLabel" for="savings"> New Savings Balance: </label>
+            <p class="balances" id="savings"></p>
             <br />
             <button
                 id="submitButton"
@@ -41,7 +44,7 @@
             >
                 Submit
             </button>
-            <button id="cancelButton" class="button" type="button">
+            <button id="cancelButton" class="button" type="button" onclick="home()">
                 Cancel
             </button>
         </main>

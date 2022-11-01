@@ -1,4 +1,9 @@
 async function transfers() {
+
+    const formatter = new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+    });
     if ((document.getElementById("accounts").value == "checkingAccount")) {
         
         let checkingBalance = sessionStorage.getItem("checkingBalance");
@@ -7,9 +12,9 @@ async function transfers() {
         document.getElementById("checking").innerHTML =
             checkingBalance - document.getElementById("transferAmount").value;
         let update =(checkingBalance - document.getElementById("transferAmount").value);
-        document.getElementById("checking").innerHTML = update;
+        document.getElementById("checking").innerHTML = formatter.format(update);
         let savingsupdate = ((Number)(savingsBalance) + (Number)(transferAmount));
-        document.getElementById("savings").innerHTML = savingsupdate;
+        document.getElementById("savings").innerHTML = formatter.format(savingsupdate);
         sessionStorage.setItem("update", update);
         sessionStorage.setItem("savingsupdate", savingsupdate);
         sessionStorage.setItem("transferAmount", transferAmount);
@@ -22,10 +27,10 @@ async function transfers() {
             savingsBalance - document.getElementById("transferAmount").value;
         let savingsupdate =
              ((Number)(savingsBalance) - (Number)(document.getElementById("transferAmount").value));
-            document.getElementById("savings").innerHTML = savingsupdate;
+            document.getElementById("savings").innerHTML = formatter.format(savingsupdate);
         let update =
            ((Number)(checkingBalance) + (Number)(document.getElementById("transferAmount").value));
-        document.getElementById("checking").innerHTML = update;
+        document.getElementById("checking").innerHTML = formatter.format(update);
         sessionStorage.setItem("transferAmount", document.getElementById("transferAmount").value);
         sessionStorage.setItem("update", update);
         sessionStorage.setItem("savingsupdate", savingsupdate);
@@ -154,7 +159,11 @@ async function updateBalances(){
     );
     document.location.assign("./home.html")
 }
+function home(){
 
+    document.location.assign("./home.html")
+}
+    
 
 
 

@@ -11,7 +11,10 @@ body {
     align-items: center;
     background-color: rgb(216, 216, 216);
 }
-
+#logo{
+    top:13%;
+    margin-top: 14px;
+}
 #homeH1 {
     color: #420079;
     position: absolute;
@@ -30,5 +33,7 @@ body {
 }
 
 .table {
+
+    
     border-radius: 6px;
 }

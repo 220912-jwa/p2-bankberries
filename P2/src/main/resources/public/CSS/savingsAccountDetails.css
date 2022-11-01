@@ -22,7 +22,7 @@ body {
     color: #420079;
     align-items: center;
     height: 130%;
-    position: absolute;
+    
 }
 
 #savingsDiv {
@@ -54,7 +54,7 @@ body {
 
 #transferButton {
     position: absolute;
-    bottom: 60%;
+    top: 7.1%;
     width: 15%;
     padding: 7px;
     border: none;

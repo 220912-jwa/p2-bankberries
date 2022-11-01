@@ -8,6 +8,46 @@ body {
     font-family: "Times New Roman", Times, serif;
 
     background-color: rgb(216, 216, 216);
+
+
+
+}
+#checkingLabel{
+    position: absolute;
+    left: 30%;
+    top: 13%;
+    margin-bottom: 6px;
+
+}
+#savingsLabel{
+    position: absolute;
+    left: 30%;
+    top: 17%;
+    margin-bottom: 6px;
+
+}
+#transferLabel{
+position: absolute;
+left: 30%;
+top: 9%;
+margin-bottom: 6px;
+
+
+
+}
+
+#checking{
+position: absolute;
+left: 39%;
+top: 11.5%;
+
+}
+#savings{
+    position: absolute;
+    left: 39%;
+    top: 15.5%;
+    
+
 }
 
 #transferAmount {
@@ -21,6 +61,7 @@ body {
     padding: 0px 0px 5px 5px;
     position: absolute;
     top: 9%;
+    height: 20px;
     left: 38%;
 }
 
@@ -39,11 +80,14 @@ body {
 #submitButton {
     position: absolute;
     left: 34%;
+    top: 22%;
+
 }
 
 #cancelButton {
     position: absolute;
     left: 45%;
+    top: 22%;
 }
 
 .select {

@@ -7,8 +7,6 @@ Feature: Navigation
 
     Examples:
       | Link            | Link Title        |
-      | Checking Account| Checking Details  |
-      | Savings Account | Savings Details   |
       | Apply for Loan| Loan Application  |
       | Home            | Home              |
       | Contact Us      | Contact Us        |
@@ -23,5 +21,5 @@ Feature: Navigation
 
   Scenario: A user can view Savings Account details
     Given the user is logged in and on the Account Home page
-    When the user clicks on Checking Account
+    When the user clicks on Savings Account
     Then the user can see their savings account details

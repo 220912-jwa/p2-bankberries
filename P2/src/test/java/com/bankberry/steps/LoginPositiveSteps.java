@@ -51,6 +51,6 @@ public class LoginPositiveSteps {
     public void theUserShouldBeOnThePage() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.id("savingsTable")));
-        assertEquals("This is an actual home page",driver.findElement(By.id("homeH1")).getText());
+        assertEquals("Home",driver.getTitle());
     }
 }

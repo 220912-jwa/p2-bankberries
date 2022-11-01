@@ -18,8 +18,10 @@ public class TransactionSteps {
     WebDriver driver = Runner.driver;
     @When("the user clicks on Checking Account")
     public void theUserClicksOnCheckingAccount() {
-        driver.findElement(By.linkText("Checking Account")).click();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("checkingLink")));
+        driver.findElement(By.id("checkingLink")).click();
+
         wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.linkText("Transfer funds")));
     }
 
@@ -56,15 +58,17 @@ public class TransactionSteps {
     public void userIsRedirectedToAccountHomeWhenTransferIsSuccessful() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.id("accountBalance")));
-        assertEquals("This is an actual home page",driver.findElement(By.id("homeH1")).getText());
+        assertEquals("Home",driver.getTitle());
     }
 
 
 
     @When("the user clicks on Savings Account")
     public void theUserClicksOnSavingsAccount() {
-        driver.findElement(By.linkText("Savings Account")).click();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("savingsLink")));
+        driver.findElement(By.id("savingsLink")).click();
+
         wait.until(ExpectedConditions.elementToBeClickable(By.linkText("Transfer funds")));
     }
 

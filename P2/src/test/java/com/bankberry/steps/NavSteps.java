@@ -38,8 +38,11 @@ public class NavSteps {
     }
 
     @When("a user clicks on the {string}")
+    //needs a wait for element
     public void aUserClicksOnThe(String arg0) {
-        driver.findElement(By.linkText(arg0)).click();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(6));
+        wait.until(ExpectedConditions.elementToBeClickable(By.partialLinkText(arg0)));
+        driver.findElement(By.partialLinkText(arg0)).click();
     }
 
     @Then("the user should be on the {string} page")
@@ -56,6 +59,6 @@ public class NavSteps {
 
     @Then("the user can see their savings account details")
     public void theUserCanSeeTheirSavingsAccountDetails() {
-        assertEquals("Checking Account", driver.findElement(By.id("savingsH1")).getText());
+        assertEquals("Savings Details", driver.getTitle());
     }
 }

@@ -15,7 +15,7 @@ body {
 #homeNav {
     position: absolute;
     top: 1%;
-    right: 45%;
+    right: 47%;
 }
 
 #checkingH1 {
@@ -64,6 +64,11 @@ body {
     background-color: #535353;
     cursor: pointer;
     outline: none;
+}
+
+#buttonText {
+    color: white;
+    text-decoration: none;
 }
 
 .table {

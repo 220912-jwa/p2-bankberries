@@ -1,3 +1,4 @@
+<!--! DONE-->
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -8,40 +9,32 @@
         <title>Profile</title>
         <link rel="stylesheet" href="..\..\public\CSS\memberProfile.css" />
     </head>
-    <!--TODO Fix Spacing-->
     <body>
         <main>
             <div id="homeNav">
                 <a id="homeLink" href="home.html">Home</a>
-                
                 <a id="contactLink" href="contact.html">Contact Us</a>
             </div>
-            <h1 id="profileH1">Profile</h1>
-            <label class="current" id="emailLabel" for="email">Current Email</label>
+            <!--<h1 id="profileH1">Profile</h1>-->
+            <label class="text" id="emailLabel" for="email">New Email</label>
             <br></br>
             <input class="input" id="email" type="text" />
             <br></br>
             <button class="button" id="emailButton" type="button" onclick="updateEmail()">Update Email</button>
             <br></br>
             <br></br>
-            <label class="current" id="passwordLabel" for="password">Current Password</label>
+            <label class="text" id="passwordLabel" for="password">New Password</label>
             <br></br>
             <input class="input" id="password" type="password" />
             <br></br>
             <button class="button" id="passwordButton" type="button" onclick="updatePassword()">Update Password</button>
             <br></br>
             <br></br>
-            <!--! Address info isn't actually going to be added to database-->
-            <label class="current" id="addressLabel" for="address">Current Address</label>
+            <label class="text" id="addressLabel" for="address">1208 MilkyWay Galaxy City, TX 76306</label>
             <br></br>
-           
-            
-            <!--! Phone info isn't actually going to be added to database-->
-            <label class="current" id="phoneLabel" for="phone">Current Phone Number</label>
+            <label class="text" id="phoneLabel" for="phone">940-867-5309</label>
             <br></br>
-
             <br></br>
- 
         </main>
     </body>
 </html>

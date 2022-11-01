@@ -6,8 +6,8 @@ import java.sql.SQLException;
 
 public class ConnectionUtil {
 
-    public static Connection createConnection(){
-        try{
+    public static Connection createConnection() {
+        try {
             return DriverManager.getConnection(String.format(
                     "jdbc:postgresql://%s:%s/%s?user=%s&password=%s",
                     System.getenv("HOST"),
@@ -17,7 +17,7 @@ public class ConnectionUtil {
                     System.getenv("PASSWORD")
 
             ));
-        } catch (SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
             return null;
         }
@@ -28,6 +28,5 @@ public class ConnectionUtil {
         System.out.println(createConnection());
 
     }
-
 
 }

@@ -66,6 +66,11 @@ body {
     outline: none;
 }
 
+#buttonText {
+    color: white;
+    text-decoration: none;
+}
+
 .table {
     border-radius: 6px;
 }

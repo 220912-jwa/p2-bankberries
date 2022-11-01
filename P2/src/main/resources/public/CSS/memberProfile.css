@@ -47,9 +47,20 @@ body {
 #homeNav {
     position: absolute;
     top: 1%;
+    left: 44%;
 }
 
-.current {
+.text {
+    position: absolute;
+    left: 46%;
+}
+
+#addressLabel {
+    position: absolute;
+    left: 39%;
+}
+
+#phoneLabel {
     position: absolute;
     left: 45%;
 }

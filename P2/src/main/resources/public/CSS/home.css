@@ -14,13 +14,13 @@ body {
 
 #homeH1 {
     color: #420079;
-    height: 130%;
+    position: absolute;
 }
 
 #homeNav {
     position: absolute;
     top: 1%;
-    left: 38%;
+    left: 36%;
 }
 
 #homeH1 {

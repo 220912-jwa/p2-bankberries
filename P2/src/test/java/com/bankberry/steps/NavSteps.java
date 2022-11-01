@@ -48,4 +48,14 @@ public class NavSteps {
         wait.until(ExpectedConditions.titleIs(arg0));
         assertEquals(arg0, driver.getTitle());
     }
+
+    @Then("the user can see their checking account details")
+    public void theUserCanSeeTheirCheckingAccountDetails() {
+        assertEquals("Checking Account", driver.findElement(By.id("checkingH1")).getText());
+    }
+
+    @Then("the user can see their savings account details")
+    public void theUserCanSeeTheirSavingsAccountDetails() {
+        assertEquals("Checking Account", driver.findElement(By.id("savingsH1")).getText());
+    }
 }

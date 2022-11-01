@@ -13,3 +13,15 @@ Feature: Navigation
       | Home            | Home              |
       | Contact Us      | Contact Us        |
       | Profile         | Profile           |
+
+
+  Scenario: A user can view Checking Account details
+      Given the user is logged in and on the Account Home page
+      When the user clicks on Checking Account
+      Then the user can see their checking account details
+
+
+  Scenario: A user can view Savings Account details
+    Given the user is logged in and on the Account Home page
+    When the user clicks on Checking Account
+    Then the user can see their savings account details
